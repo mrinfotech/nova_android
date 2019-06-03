@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3sp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="25sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="2sp" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="Enter OTP"
+                                android:textColor="#000000"
+                                android:textSize="16sp" >
+                            </TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end" >
+
+                            <ImageView
+                                android:id="@+id/cancel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:src="@drawable/popupcloseicon"
+                                android:layout_marginRight="10dp">
+                            </ImageView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" 
+                        android:layout_marginRight="25dp">
+
+                       <!-- <android.support.design.widget.TextInputLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <EditText
+                                android:id="@+id/otpmobilenumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@drawable/edittext"
+                                android:hint="Enter OTP*"
+                                android:paddingLeft="15dp"
+                                android:singleLine="true"
+                                android:textColor="@color/light_black"
+                                android:textSize="14sp" />
+                        </android.support.design.widget.TextInputLayout>-->
+
+                        <LinearLayout
+                            android:id="@+id/chequelinear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20dp">
+                            <android.support.design.widget.TextInputLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+                                <EditText
+                                    android:id="@+id/otpmobilenumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/edittext"
+                                    android:hint="Enter OTP*"
+                                    android:paddingLeft="15dp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/light_black"
+                                    android:textSize="14sp" />
+                            </android.support.design.widget.TextInputLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/appbackground"></View>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/popup_submit"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/appcolorbuttonbg"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

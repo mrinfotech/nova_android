@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mrnovacrm">
+
+    <!-- package="com.b2b" -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+ <!--   <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />-->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".constants.GlobalShare"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme.Base">
+        <activity
+            android:name=".splashscreen.SplashScreenActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".b2b_dealer.DealerMenuScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ApplicationReloadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userprofile.UserProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userprofile.ProfileFullScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.BTProductDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.CartListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.OrderSummaryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.ProductImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.ProductListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.ProductListActivityNew"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.UserPaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.TrackOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.ReceivedOrdersDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.OrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.FinanceDeptMenuScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.DispatchMenuScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.PackerPackReceiveDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.PackedOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.PackerItemsBarCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_delivery_dept.DeliveryMenuScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_delivery_dept.DeliveryOrderListDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_delivery_dept.DeliverReceivedListDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_delivery_dept.DeliveryOrderProcessDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_delivery_dept.DeliverDeleveredDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_sales_dept.SalesMenuScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_admin.AdminMenuScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_superadmin.SuperAdminMenuScrenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_admin.AdminOrdersTabActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_admin.EmployeeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_superadmin.BrachesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_superadmin.SuperAdminDashBoardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.EmployeeListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageTrasportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_superadmin.AdminListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_superadmin.ManageBranchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_superadmin.UpdateAdminActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_admin.UpdateEmployeesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_admin.EmployeeDataListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.FinanceEmployeesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.UpdateFinanceEmployeesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.FinanceOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.ProductCategoriesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.FinanceOrdersTabActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.FinanceReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageDealersAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageDealersContactsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageDealersPersonalcontact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageEmployeeAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageEmployeePersonalcontact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.ManageEmployeeCompanyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.DealersDataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.EmployeeFullDeatailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.UpdateEmployeesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_finance_dept.FinanceManageDealerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_delivery_dept.DeliverReceivedListDetailsActivityy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.DOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.TrackDeliveryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.DispatchPackHistoryDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dispatch_dept.DispatchDeliveryProcessDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.DeliveryOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.RejectedOrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userprofile.UpdateProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userprofile.UpdateEmployeeProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.TermsandConditionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.CheckoutInvoiceReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.InvoiceDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_admin.EmpListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userprofile.UpdateDealerProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.DealerProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".b2b_dealer.UpdateDelalerDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DemoWebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".wallet.WalletCreditListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".wallet.CreditDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".wallet.DebitDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".wallet.ChequestatusListActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".wallet.ChequeDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".wallet.StatementListActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".b2b_admin.AdminPaymentsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".userprofile.EmployeeFullProfileActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".login.LoginRoleBranchesActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".b2b_dispatch_dept.UpdateLRNumberDetails"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="mainactivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activity.NotificationListDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".b2b_dealer.NotificationStatementActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".b2b_finance_dept.FinancePlacedOrderDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".b2b_dealer.FinanceTransportOrderDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".b2b_dispatch_dept.DispatchRejectedHistoryDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".activity.DemoActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!-- Firebase Notifications -->
+        <service android:name=".firebaseservice.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".firebaseservice.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

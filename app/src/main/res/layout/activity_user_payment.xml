@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/include_actionbar"
+        layout="@layout/layout_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include_actionbar"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transport"
+                android:textSize="11sp"
+                android:paddingLeft="3dp"/>
+            <Spinner
+                android:id="@+id/transport_spinner"
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:background="@drawable/spinnerbg"></Spinner>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/remarksedittextbg"
+                android:layout_marginTop="25dp">
+                <EditText
+                    android:id="@+id/remarkstxt"
+                    android:layout_width="210dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/edittext"
+                    android:hint="Enter Remarks"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:gravity="top|left"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <Button
+                android:id="@+id/chequebtn"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:background="@color/appbackground"
+                android:text="Cheque"
+                android:layout_marginTop="25dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/paytmbtn"
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:background="@color/appbackground"
+                android:text="Proceed to pay"
+                android:layout_marginTop="25dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/codbtn"
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/appbackground"
+                android:text="Credit Request"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1.4"
+            android:gravity="left|center_vertical"
+            android:textColor="@color/grey"
+            android:textSize="11sp" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/productcal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/grey"
+                android:textSize="11sp" />
+
+           <!-- <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/grey"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tax_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="15.00 % SGST+ 15.00%CGST"
+                android:textColor="@color/grey"
+                android:textSize="10sp" />-->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/totlproductcnt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="0.8"
+            android:gravity="right|center_vertical"
+            android:textColor="@color/grey"
+            android:textSize="11sp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgray"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"></View>
+</LinearLayout>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:textSize="11sp"
+                android:layout_weight="1.4"
+                android:text="sssssssssssssssssssssssss"
+                android:layout_marginRight="3dp"/>
+            <TextView
+                android:id="@+id/productcal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:textSize="11sp"
+                android:textColor="@color/grey"
+                android:layout_weight="0.8"
+                android:text="ssssssss"/>
+            <TextView
+                android:id="@+id/totlproductcnt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/grey"
+                android:textSize="11sp"
+                android:text="ssssssssssss"
+                android:gravity="right|center_vertical"
+                android:layout_weight="0.8"
+                android:layout_marginLeft="3dp"/>
+        </LinearLayout>
+    </LinearLayout>-->

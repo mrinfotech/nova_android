@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/headerrelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/storenametxtval"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/appbackground"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/lightgray"></View>
+            <TextView
+                android:id="@+id/ordernumbertxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/light_black"/>
+        </LinearLayout>
+     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerrelative"
+        android:layout_marginTop="10dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Transport type"
+                        android:textColor="@color/light_black"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/transporttypetxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lpnumberlinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="LR Number"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/lpnumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/vehiclnumberlinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Vehicle Number"
+                        android:textColor="@color/light_black"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/vehiclenumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/drivernamelinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Driver Name"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/drivernameedittxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/drivermobilelinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Driver Mobile Number"
+                        android:textColor="@color/light_black"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/drivermobileedittxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="From route"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/fromrouteedittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="To route"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/torouteedittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Estimation"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Paid"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/paid"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="To Pay"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/topay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:text="Mobile"
+                        android:textSize="12sp"
+                        android:paddingLeft="25dp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="center"
+                        android:text=":"
+                        android:textSize="12sp"
+                        android:textColor="@color/light_black" />
+
+                    <TextView
+                        android:id="@+id/phonenumberedittext"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:textSize="12sp"
+                        android:textColor="@color/appbackground" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/headerrelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <include
+            android:id="@+id/include_actionbar"
+            layout="@layout/layout_actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
+     </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/titlerel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerrelative">
+        <TextView
+            android:id="@+id/storenametxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/appbackground"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@color/white"/>
+    </RelativeLayout>
+    <view
+        android:id="@+id/viewrel"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@+id/titlerel"
+        android:background="@color/lightgray"></view>
+    
+    <RelativeLayout
+        android:id="@+id/orderrel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewrel"
+        android:layout_marginLeft="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order id : "
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/light_black"/>
+
+            <TextView
+                android:id="@+id/orderidval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/light_black"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderrel"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+           android:layout_marginTop="13dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Transport type"
+                    android:textColor="@color/light_black"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/transporttypetxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lpnumberlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="LR Number"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/lpnumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/vehiclnumberlinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Vehicle Number"
+                    android:textColor="@color/light_black"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/vehiclenumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/drivernamelinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Driver Name"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/drivernameedittxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/drivermobilelinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Driver Mobile Number"
+                    android:textColor="@color/light_black"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/drivermobileedittxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="From route"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black"
+                    android:textSize="12sp"
+/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/fromrouteedittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="To route"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/torouteedittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Estimation"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+               android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Paid"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/paid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="To Pay"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/topay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text=""
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_marginTop="13dp"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="Mobile"
+                    android:textSize="12sp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="12sp"
+                    android:textColor="@color/light_black" />
+
+                <TextView
+                    android:id="@+id/phonenumberedittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:textSize="12sp"
+                    android:textColor="@color/appbackground" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>-->

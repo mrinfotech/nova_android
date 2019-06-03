@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/invoice"
+        android:title="@string/invoice"
+        android:icon="@drawable/fileshare"
+        app:showAsAction="always"/>
+
+</menu>

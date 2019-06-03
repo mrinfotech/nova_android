@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:background="#ffffff"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp">
+
+     <TextView
+                android:id="@+id/searchtextview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_black"
+                android:textSize="12sp"
+                android:padding="2dp"
+                android:gravity="left"
+                android:layout_marginLeft="20dp"/>
+   </LinearLayout>

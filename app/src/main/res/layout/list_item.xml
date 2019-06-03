@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_hght"
+    android:padding="@dimen/list_item_padding"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="@dimen/list_item_imgwdth"
+        android:layout_height="@dimen/list_item_imghght"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/list_item_mleft"
+        android:paddingTop="@dimen/list_item_imgptop"
+        android:paddingBottom="@dimen/list_item_imgpbtm"
+        android:background="@drawable/expandable_child_circle"/>
+
+    <TextView
+        android:id="@+id/lblListItem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/list_item_txtsize"
+        android:paddingTop="@dimen/list_item_txtmtop"
+        android:paddingBottom="@dimen/list_item_txtmtop"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="@dimen/list_item_txtpleft"
+        android:text="Sub Category" />
+
+</LinearLayout>

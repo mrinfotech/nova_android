@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/header_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+                <EditText
+                    android:id="@+id/addgradetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext"
+                    android:hint="Grade name"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/light_black"
+                    android:textSize="12sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:id="@+id/grade"
+                android:layout_below="@+id/transport"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/appbackground"></View>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/gradeamount_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext"
+                    android:hint="Grade amount"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/light_black"
+                    android:textSize="12sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_below="@+id/transport"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/appbackground"></View>
+
+            <LinearLayout
+                android:id="@+id/btnlnr"
+                android:layout_below="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/submit_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/appcolorbuttonbg"
+                    android:text="@string/submitbtn"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--<TextView
+        android:id="@+id/transporttxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grades"
+        android:layout_below="@+id/header_rel"
+        android:textColor="@color/appbackground"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"/>-->
+
+    <LinearLayout
+        android:id="@+id/gradelinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/header_rel"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/grade_name_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:text="Grade name"
+            android:textStyle="bold"
+            android:textColor="@color/appbackground"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:text="Grade amounnt"
+            android:textColor="@color/appbackground"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="13sp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/gradelinear"
+        android:layout_marginTop="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

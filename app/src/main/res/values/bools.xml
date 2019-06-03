@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="largescreen">false</bool>
+    <bool name="normalscreen">true</bool>
+    <bool name="seveninchscreen">false</bool>
+    <bool name="teninchscreen">false</bool>
+</resources>

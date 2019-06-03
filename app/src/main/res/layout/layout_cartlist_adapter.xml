@@ -1,0 +1,763 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    android:layout_marginTop="5dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardPreventCornerOverlap="false"
+    cardview:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titlelinear"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/appbackground"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/titletxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agritech Products"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="2dp">
+                    <ImageView
+                        android:id="@+id/product_image"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="2dp">
+                    <TextView
+                        android:id="@+id/product_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:textColor="@color/light_black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginTop="2dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="MRP "
+                                        android:layout_weight="0.8"
+                                        android:textColor="@color/light_black"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text=" : "
+                                        android:gravity="center"
+                                        android:layout_weight="0.2"
+                                        android:textColor="@color/light_black"
+                                        android:textSize="11sp" />
+
+                                    <TextView
+                                        android:id="@+id/company_mrptxt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/light_black"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Case/Box qty"
+                                            android:layout_weight="1.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text=" : "
+                                            android:gravity="center"
+                                            android:layout_weight="0.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+
+                                        <TextView
+                                            android:id="@+id/caseboxqtytxt"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="0.6"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="MRP"
+                                            android:layout_weight="0.8"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text=" : "
+                                            android:gravity="center"
+                                            android:layout_weight="0.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+
+                                        <TextView
+                                            android:id="@+id/mrp_txt"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:text=""
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.7"
+                                        android:orientation="horizontal">
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Basic price"
+                                            android:layout_weight="0.8"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text=" : "
+                                            android:gravity="center"
+                                            android:layout_weight="0.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+
+                                        <TextView
+                                            android:id="@+id/product_mrp"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.7"
+                                        android:orientation="horizontal">
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="2"
+                                android:layout_marginTop="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="Profit"
+                                        android:layout_weight="0.8"
+                                        android:textColor="@color/light_black"
+                                        android:textSize="10sp" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text=" : "
+                                        android:gravity="center"
+                                        android:layout_weight="0.2"
+                                        android:textColor="@color/light_black"
+                                        android:textSize="11sp" />
+
+                                    <TextView
+                                        android:id="@+id/product_discount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textColor="@color/light_black"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.7"
+                                    android:orientation="horizontal">
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Net price"
+                                            android:layout_weight="0.8"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text=" : "
+                                            android:gravity="center"
+                                            android:layout_weight="0.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+
+                                        <TextView
+                                            android:id="@+id/product_pay"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.7"
+                                        android:orientation="horizontal">
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!--<LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Case price"
+                                            android:layout_weight="0.8"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text=" : "
+                                            android:gravity="center"
+                                            android:layout_weight="0.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+
+                                        <TextView
+                                            android:id="@+id/caseprice_pay"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.7"
+                                        android:orientation="horizontal">
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>-->
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="3dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="2"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text="Total cost"
+                                            android:layout_weight="0.8"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:text=" : "
+                                            android:gravity="center"
+                                            android:layout_weight="0.2"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="11sp" />
+                                        <TextView
+                                            android:id="@+id/totaltxt"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:textColor="@color/light_black"
+                                            android:textSize="10sp"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="0.7"
+                                        android:orientation="horizontal">
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+
+
+
+
+                        </LinearLayout>
+
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.9"
+                            android:gravity="center"
+                            android:paddingLeft="2dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginBottom="5dp">
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal"
+                                                android:weightSum="2">
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Pack type"
+                                                    android:layout_weight="0.9"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp" />
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:text=" : "
+                                                    android:gravity="center"
+                                                    android:layout_weight="0.2"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp" />
+
+                                                <TextView
+                                                    android:id="@+id/packtype_txt"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="0.9"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp"
+                                                    android:textStyle="bold" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:weightSum="2">
+
+                                                <TextView
+                                                    android:id="@+id/casetxt"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="0.9"
+                                                    android:text="Case qty"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp" />
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="0.2"
+                                                    android:gravity="center"
+                                                    android:text=" : "
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp" />
+
+                                                <TextView
+                                                    android:id="@+id/packqtytxt"
+                                                    android:layout_width="0dp"
+                                                    android:layout_weight="0.9"
+                                                    android:layout_height="wrap_content"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp"
+                                                    android:textStyle="bold" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:weightSum="2">
+
+                                                <TextView
+                                                    android:id="@+id/casepricetxt"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="0.9"
+                                                    android:text="Case price"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp" />
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="0.2"
+                                                    android:gravity="center"
+                                                    android:text=" : "
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp" />
+
+                                                <TextView
+                                                    android:id="@+id/caseprice_pay"
+                                                    android:layout_width="0dp"
+                                                    android:layout_weight="0.9"
+                                                    android:layout_height="wrap_content"
+                                                    android:textColor="@color/light_black"
+                                                    android:textSize="10sp"
+                                                    android:textStyle="bold" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginRight="5dp"
+                                        android:layout_marginBottom="5dp">
+
+                                        <EditText
+                                            android:id="@+id/qtyedittext"
+                                            android:layout_width="60dp"
+                                            android:layout_height="25dp"
+                                            android:background="@drawable/border_edittext"
+                                            android:gravity="center"
+                                            android:hint="Qty"
+                                            android:imeOptions="actionDone"
+                                            android:inputType="number"
+                                            android:singleLine="true"
+                                            android:textSize="10sp"
+                                            android:layout_marginTop="6dp"
+                                            android:layout_marginBottom="4dp"/>
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:gravity="center_vertical"
+                                            android:layout_marginTop="6dp"
+                                            android:layout_marginBottom="4dp"
+                                            android:layout_marginLeft="10dp">
+                                            <ImageView
+                                                android:id="@+id/cart_img"
+                                                android:layout_width="23dp"
+                                                android:layout_height="24dp"
+                                                android:layout_gravity="center"
+                                                android:src="@drawable/ic_delete_black_36dp" />
+                                        </LinearLayout>
+                                        <TextView
+                                            android:id="@+id/product_instock"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:textSize="10sp"
+                                            android:visibility="gone" />
+                                        <!--<LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="5dp"
+                                            android:orientation="horizontal"
+                                            android:weightSum="2">
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginLeft="5dp"
+                                                android:layout_marginTop="5dp"
+                                                android:layout_weight="1.1"
+                                                android:gravity="bottom"
+                                                android:orientation="vertical">
+
+                                                <EditText
+                                                    android:id="@+id/qtyedittext"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="25dp"
+                                                    android:background="@drawable/border_edittext"
+                                                    android:gravity="center"
+                                                    android:imeOptions="actionDone"
+                                                    android:inputType="number"
+                                                    android:singleLine="true"
+                                                    android:textSize="12sp"
+                                                    android:layout_marginLeft="3dp"/>
+
+                                                <TextView
+                                                    android:id="@+id/product_instock"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:gravity="center"
+                                                    android:textSize="10sp"
+                                                    android:visibility="gone" />
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginLeft="5dp"
+                                                android:layout_weight="0.9"
+                                                android:gravity="center">
+
+                                                <ImageView
+                                                    android:id="@+id/cart_img"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="26dp"
+                                                    android:src="@drawable/ic_delete_black_36dp" />
+                                            </LinearLayout>
+                                        </LinearLayout>-->
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/product_margin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/light_black"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

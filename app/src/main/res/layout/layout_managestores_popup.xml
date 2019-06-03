@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="340dp">
+
+        <RelativeLayout
+            android:id="@+id/closerel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/reason_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="Reason for cancel"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/closeicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/popupcloseicon" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/closerel">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical">
+                <RadioGroup
+                    android:id="@+id/radiogroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </RadioGroup>
+                <LinearLayout
+                    android:id="@+id/linear_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/rec_shape_grey">
+
+                    <EditText
+                        android:id="@+id/cancelorder_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_below="@+id/reason_cancel"
+                        android:background="@drawable/edittext"
+                        android:gravity="top|left"
+                        android:hint="Enter Description"
+                        android:textColor="@color/black"></EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/proof_path"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@drawable/edittext"
+                        android:cursorVisible="false"
+                        android:editable="false"
+                        android:ellipsize="end"
+                        android:hint="Attach Proof"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/light_black"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right">
+
+                        <Button
+                            android:id="@+id/attach_proof"
+                            android:layout_width="100dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/browsebtnbg"
+                            android:text="@string/attachaddressproof"
+                            android:textAllCaps="false"
+                            android:textSize="11sp"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/appbackground"
+                    android:visibility="gone"></View>
+
+                <TextView
+                    android:id="@+id/submittxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/submitbtncornerbg"
+                    android:layout_gravity="center"
+                    android:text="@string/submit"
+                    android:textColor="@color/appbackground"
+                    android:textSize="18sp"
+
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp">
+            <RelativeLayout
+                android:id="@+id/closerel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:id="@+id/reason_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reason for cancel"
+                    android:textColor="@color/black"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:id="@+id/closeicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/popupcloseicon"/>
+
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_below="@+id/closerel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
+                        android:id="@+id/radiogroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </RadioGroup>
+
+                   <LinearLayout
+                        android:id="@+id/linear_edittext"
+                       android:layout_below="@+id/radiogroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/rec_shape_grey"
+                       android:visibility="gone">
+                        <EditText
+                            android:id="@+id/cancelorder_txt"
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/reason_cancel"
+                            android:layout_height="90dp"
+                            android:gravity="top|left"
+                            android:textColor="@color/black"
+                            android:background="@drawable/edittext"></EditText>
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_below="@+id/linear_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+                        <RelativeLayout
+                            android:layout_width="140dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/submitbtncornerbg"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/submittxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/submit"
+                                android:textColor="@color/appbackground"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:gravity="center"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>-->

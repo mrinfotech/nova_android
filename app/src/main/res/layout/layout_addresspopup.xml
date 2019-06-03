@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="Pickup Location"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/closeicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/popupcloseicon"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_above="@+id/footer"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/address_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"></TextView>
+
+                <LinearLayout
+                    android:id="@+id/distancelinear"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/address_txt"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:layout_marginTop="3dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Distance"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.6"
+                        android:textSize="14sp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:layout_weight="0.2"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/distancetxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="12 KM"
+                        android:textColor="@color/black"
+                        android:layout_weight="1.2"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/timelinear"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/distancelinear"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:layout_marginTop="3dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Travel Time"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.6"
+                        android:textSize="14sp"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:layout_weight="0.2"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/traveltimetxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_weight="1.2"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true">
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/submitbtncornerbg"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/viewonmaptxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="View on Map"
+                    android:textColor="@color/appbackground"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <RelativeLayout
+            android:id="@+id/closerel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/reason_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pickup Location"
+                android:textColor="@color/black"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/closeicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/popupcloseicon"/>
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_below="@+id/closerel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp">
+
+                <TextView
+                    android:id="@+id/address_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:background="@drawable/edittext"></TextView>
+
+                <RelativeLayout
+                    android:layout_below="@+id/address_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+                    <RelativeLayout
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/submitbtncornerbg"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/viewonmaptxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="View on Map"
+                            android:textColor="@color/appbackground"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:gravity="center"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>-->

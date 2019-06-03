@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="3dp"
+    android:layout_marginTop="@dimen/linear_monthlist_martop"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/spinnersubitemslist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="3dp"
+        android:singleLine="true"
+        android:text="items"
+        android:textColor="@color/black"
+        android:textSize="@dimen/spinnersubitemslist_mnthslist_textsize"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="12dp"/>
+    <TextView
+        android:id="@+id/spinnercompanyname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="3dp"
+        android:singleLine="true"
+        android:text="items"
+        android:textColor="@color/black"
+        android:textSize="@dimen/spinnersubitemslist_mnthslist_textsize"
+        android:layout_marginLeft="6dp"
+        android:visibility="gone"
+        android:layout_marginBottom="3dp"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mnthslist_view_height"
+        android:background="#808080"
+        android:visibility="gone" />
+
+</LinearLayout>

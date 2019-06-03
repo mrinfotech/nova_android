@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appbackground"
+    android:orientation="vertical">
+    <!--android:background="@drawable/bground"-->
+    <RelativeLayout
+        android:id="@+id/headrel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <include
+            android:layout_marginTop="@dimen/activity_login_includemtop"
+            layout="@layout/layout_headerlogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headrel"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/activity_login_btmleft"
+        android:layout_marginRight="@dimen/activity_login_btmrght"
+        android:layout_marginTop="50dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/mobilenumbertxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_login_edithght"
+                    android:backgroundTint="@color/white"
+                    android:ems="10"
+                    android:textSize="@dimen/activity_login_edittxtsize"
+                    android:hint="@string/userid"
+                    android:singleLine="true"
+                    android:paddingLeft="@dimen/activity_login_editpleft"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+                <EditText
+                    android:id="@+id/passwordtxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_login_edithght"
+                    android:backgroundTint="@color/white"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/activity_login_edittxtsize"
+                    android:layout_marginTop="@dimen/activity_login_editmtop"
+                    android:hint="@string/password"
+                    android:singleLine="true"
+                    android:paddingLeft="@dimen/activity_login_editpleft"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+                <TextView
+                    android:id="@+id/forgotpwdtxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="@dimen/activity_login_forgotmbtm"
+                    android:layout_marginTop="@dimen/activity_login_forgotmtop"
+                    android:textSize="@dimen/activity_login_forgotmtxtsize"
+                    android:text="@string/requestpwd"
+                    android:textColor="@color/white" />
+                <Button
+                    android:id="@+id/loginbtn"
+                    android:layout_width="@dimen/activity_login_btnwdth"
+                    android:layout_height="@dimen/activity_login_btnhght"
+                    android:layout_marginTop="@dimen/activity_login_btnmtop"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/buttoncornerbg"
+                    android:paddingLeft="@dimen/activity_login_btnmleft"
+                    android:paddingRight="@dimen/activity_login_btnmrght"
+                    android:textColor="@color/appbackground"
+                    android:textAllCaps="false"
+                    android:text="Login" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

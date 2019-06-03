@@ -1,0 +1,465 @@
+<resources>
+    <string name="app_name">NOVA CRM</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="notifications">Notifications</string>
+
+
+    <string-array name="dealer_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/nav_item_deals</item>
+        <item>@string/nav_item_products</item>
+        <item>@string/nav_item_orders</item>
+        <item>@string/receivedorders</item>
+        <item>@string/nav_item_trackorder</item>
+        <item>@string/invoice</item>
+        <item>@string/wallet</item>
+        <item>@string/notifications</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string-array name="finance_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/dashboard</item>
+        <item>@string/managedispachers</item>
+        <item>@string/managetransport</item>
+        <item>Invoice</item>
+        <item>@string/notifications</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string name="managedispachers">Manage Dispatchers</string>
+    <string name="managedeliveryboys">Manage Delivery Boys</string>
+    <string name="managesalesexecutives">Manage Sales Executives</string>
+    <string name="managedealers">Manage Dealers</string>
+    <string name="managetransport">Manage Transport</string>
+    <string name="orders">Orders</string>
+    <string name="reports">Reports</string>
+    <string name="trackdealers">Track Dealers</string>
+
+    <string name="receivedorders">Received Orders</string>
+    <string name="managefinancemanager">Manage Depot Manager</string>
+    <string name="managebranches">Manage Branches</string>
+    <string name="dashboard">Dashboard</string>
+
+    <string-array name="admin_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/dashboard</item>
+        <item>@string/managefinancemanager</item>
+        <item>Invoice</item>
+        <item>Manage Grade</item>
+      <!--  <item>@string/notifications</item>-->
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string-array name="superadmin_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/dashboard</item>
+        <item>@string/managebranches</item>
+        <item>Manage Finance Admin</item>
+        <item>Invoice</item>
+       <!-- <item>@string/notifications</item>-->
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string-array name="franchisor_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/nav_item_dailyorders</item>
+        <item>@string/nav_item_managestores</item>
+        <item>@string/nav_item_deliveredorders</item>
+        <item>@string/nav_item_cancelledorders</item>
+        <item>@string/nav_item_reports</item>
+        <item>@string/nav_item_empreport</item>
+        <item>@string/nav_item_addstores</item>
+        <item>@string/nav_item_salesreport</item>
+        <item>@string/nav_item_registration</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string-array name="executive_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>Task Done</item>
+        <item>Task to do</item>
+        <item>Start Task</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string name="nav_item_newstore">Approve Store</string>
+    <string name="nav_item_dailyorders">Daily Orders</string>
+    <string name="nav_item_managestore">Manage Stores</string>
+    <string name="nav_item_empreport">Employee Report</string>
+    <string name="nav_item_franchisor">Franchisor</string>
+    <string name="nav_item_salesreport">Sales Report</string>
+    <string name="nav_item_registration">Registration</string>
+
+    <string-array name="picker_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/pickuporders</item>
+        <item>@string/pickuphistory</item>
+        <item>@string/invoice</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string name="pickuporders">Pickup Orders</string>
+    <string name="pickuphistory">Pickup History</string>
+    <string name="ordershistory">Orders History</string>
+
+    <string-array name="delivery_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/pickuporders</item>
+        <item>@string/pickuphistory</item>
+        <item>@string/deliveryorders</item>
+        <item>@string/deliveryhistory</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string-array name="sales_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/nav_item_deals</item>
+        <item>@string/nav_item_products</item>
+        <item>@string/nav_item_orders</item>
+        <item>Dealers List</item>
+        <item>@string/dealerreg</item>
+        <item>@string/invoice</item>
+        <item>@string/receivedorders</item>
+        <item>Track orders</item>
+        <item>@string/wallet</item>
+        <item>@string/notifications</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string name="dealerreg">Dealer Registration</string>
+
+
+    <string name="deliveryorders">Delivery Orders</string>
+    <string name="deliveryhistory">Delivery History</string>
+
+    <string-array name="seller_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/nav_item_deals</item>
+        <item>@string/nav_item_products</item>
+        <item>@string/nav_item_orders</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <!--<string-array name="packer_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/nav_item_orders_placed</item>
+        <item>@string/nav_item_orders_picked</item>
+        <item>@string/nav_item_processhistory</item>
+        <item>@string/nav_item_cancelhistory</item>
+        <item>@string/nav_item_reports</item>
+        <item>@string/complaints</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>-->
+
+    <string-array name="dispatch_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/packorders</item>
+        <item>@string/packhistory</item>
+        <item>@string/deliveryorders</item>
+        <item>@string/deliveryhistory</item>
+        <item>Rejected History</item>
+        <item>Invoice</item>
+        <item>@string/managetransport</item>
+        <item>Manage LR Number</item>
+      <!--  <item>@string/notifications</item>-->
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string name="complaints">Complaints</string>
+    <string name="packorders">Pack Orders</string>
+    <string name="packhistory">Pack History</string>
+
+
+    <string-array name="hr_nav_drawer_labels">
+        <item>@string/nav_item_myprofile</item>
+        <item>@string/hr_employee_registration</item>
+        <item>@string/hr_store_registration</item>
+        <item>@string/hr_franchise_registration</item>
+        <item>@string/nav_item_changepswrd</item>
+        <item>@string/nav_item_signout</item>
+    </string-array>
+
+    <string name="invoice">Invoice</string>
+    <string name="wallet">Wallet</string>
+    <string name="nav_item_report">Report</string>
+    <string name="nav_item_history">History</string>
+
+    <string name="hr_employee_registration">Employee Registration</string>
+    <string name="hr_store_registration">Store Registration</string>
+    <string name="hr_franchise_registration">Franchisor Registration</string>
+
+    <string name="nav_item_orders_placed">Orders Placed</string>
+    <string name="nav_item_orders_picked">Orders Picked</string>
+
+    <string name="delivery_orders_list">Orders List</string>
+    <string name="checkin_out">CheckIn/Out</string>
+    <string name="delivery_orderslist_list">Delivery Orders List</string>
+    <string name="delivery_processlist_list">Start Process</string>
+    <string name="nav_item_myprofile">Profile</string>
+    <string name="nav_item_deals">Home</string>
+    <string name="nav_item_products">Products</string>
+    <string name="nav_item_orders">Orders</string>
+    <string name="nav_item_trackorder">Track Order</string>
+    <string name="nav_item_complaints">Complaint</string>
+    <string name="nav_item_feedback">Feedback</string>
+    <string name="nav_item_changepswrd">Change Password</string>
+
+    <string name="nav_item_signout">Sign out</string>
+
+    <string name="nav_item_cancelhistory">Cancel History</string>
+    <string name="nav_item_processhistory">Processed History</string>
+
+    <string name="nav_item_addmanagepincodes">Add/Manage Pincodes</string>
+    <string name="nav_item_addstores">Add Stores</string>
+    <string name="nav_item_managestores">Manange Stores</string>
+    <string name="nav_item_deliveredorders">Delivered Orders</string>
+    <string name="nav_item_cancelledorders">Cancelled Orders</string>
+    <string name="nav_item_reports">History</string>
+    <string name="nav_item_ordershistory">Orders History</string>
+    <string name="nav_item_stores">Stores</string>
+    <string name="server_error">Couldn\'t connect server.Please try again</string>
+    <string name="networkerror">Please check your internet connection</string>
+
+    <string name="mobile">Mobile*</string>
+    <string name="enterotptxt">Enter OTP</string>
+    <string name="enterotp">Enter OTP*</string>
+    <string name="edit">Edit</string>
+    <string name="ok">OK</string>
+
+    <string name="products">Products</string>
+
+    <string name="enterfourdigitpin">Enter 4 Digit Secret Pin</string>
+    <string name="reenterfourdigitpin">Re-enter 4 Digit Secret Pin</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="login_securepin">Enter secure PIN</string>
+    <string name="new_regiseter">New to My Store? Register Here....</string>
+
+    <string name="select_product">Select Product</string>
+    <string name="location_txt">Location</string>
+    <string name="todaydeals">Today Deals</string>
+    <string name="offerdeals">Offer Deals</string>
+    <string name="hotdeals">Hot Deals</string>
+
+    <string name="about_us">About us</string>
+    <string name="videos">Videos</string>
+
+    <string name="forgotpin">Forgot Password?</string>
+    <string name="requestpwd">Request Password?</string>
+    <string name="confirm">Confirm</string>
+    <string name="profile">Profile</string>
+    <string name="placed">Placed</string>
+    <string name="closed">Closed</string>
+    <string name="rejected">Rejected</string>
+    <string name="transferred">Transferred </string>
+    <string name="processed">Processed</string>
+    <string name="denied">Denied</string>
+    <string name="profomainvoice">Proforma Invoice</string>
+    <string name="taxinvoice">Tax Invoice</string>
+
+    <string name="packed">Packed</string>
+
+    <string name="received">Received</string>
+    <string name="delivered">Delivered</string>
+    <string name="partiallyrejected">Partially rejected</string>
+    <string name="fullyrejected">Total Rejected</string>
+
+    <string name="cancelled">Cancelled</string>
+    <string name="pending">Pending</string>
+    <string name="deliver">Delivered</string>
+    <string name="approved">Approved</string>
+
+    <string name="orderhistory">Order History</string>
+    <string name="todaysummary">Today Summary</string>
+
+
+
+
+    <!--01-03-18 satya-->
+    <string name="relateditems_txt">Related to items you\'ve viewed</string>
+    <string name="product_desc">Product Description</string>
+    <string name="select_quantity">Select Quantity</string>
+    <string name="margin">Margin</string>
+    <string name="totalcost">Total Cost</string>
+    <string name="product_desc_txt">Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry. Lorem Ipsum has been the industrys
+        standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry. Lorem Ipsum has been the industrys
+        standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the
+        printing and typesetting industry. Lorem Ipsum has been the industrys
+        standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book.</string>
+    <string name="btn_addtocart">Add to Cart</string>
+    <string name="cost">Cost</string>
+    <string name="total_cost">Total Cost : </string>
+    <string name="proceed">Proceed</string>
+    <string name="slelect_delivery_address">Select Delivery Address</string>
+    <string name="use_current_address">Use Current Address</string>
+    <string name="primary_address">Primary Address</string>
+    <string name="secondary_address">Secondary Address</string>
+    <string name="add_new_address">Add New Delivery Address</string>
+    <string name="address">D.No : xx-xx/xx, xxxx
+    xxxxxxxx \n
+    xxxxxxxx</string>
+    <!--05-03-18 satya-->
+    <string name="cart">Cart</string>
+    <string name="total_items">Total Items</string>
+    <string name="total_units">Total Units</string>
+    <string name="total_savings">Total Savings</string>
+    <string name="service_charge">Charges</string>
+    <string name="total_pay">Total Pay</string>
+    <string name="subtotal_pay">Sub Total</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="checkout">Checkout</string>
+    <string name="barcode">BarCode</string>
+    <string name="phone">Phone</string>
+    <string name="list">List</string>
+
+    <!--01032018 Prasad-->
+    <string name="entermobilenumber">Enter Mobile Number</string>
+    <string name="mobilevalidmsg">Please enter mobile number</string>
+    <string name="pleaseentermobilesecurepin">Please enter userid and password</string>
+    <string name="pleaseentersecurepin">Please enter secure pin</string>
+    <string name="mobilenumber">Mobile Number*</string>
+    <string name="submit">Submit</string>
+    <string name="entersecurepin">Enter pin</string>
+    <string name="reentersecurepin">Re-enter pin</string>
+    <string name="entervalidpin">Enter valid pin</string>
+    <string name="pinmissmatch">Secure pin and reenter securepin mismatch</string>
+    <string name="secondaryaddress">Secondary Address</string>
+    <string name="changesecurepin">Change Secure Pin</string>
+    <string name="save">Save</string>
+    <string name="primaryaddress">Primary Address</string>
+    <string name="entermessage">Enter Message</string>
+    <string name="deliveryaddress">Delivery Address</string>
+    <string name="userid">User id</string>
+    <string name="useridmobilenumber">User id / Mobile number</string>
+    <string name="password">Password</string>
+    <string name="savepincode">Save Pincode</string>
+    <string name="managepincode">Manage Pincode</string>
+    <string name="attachaddressproof">Attach Proof</string>
+    <string name="validate_aadhar">Enter Aadhar no</string>
+
+    <string name="store_location">Add Location</string>
+    <string name="attachaddressproof1">Attach Address Proof 1</string>
+    <string name="attachaddressproof2">Attach Address Proof 2</string>
+    <string name="savedetails">Save Details</string>
+    <string name="google_directions_key">AIzaSyDVr6Kz5Y_-ozPtfXQwVNneXa52Ot1CLYQ</string>
+    <string name="storenameandaddress">Store Name &amp; Address</string>
+    <string name="findfriends">Find Friends</string>
+    <string name="connect">Connect</string>
+    <string name="delete">Delete</string>
+    <string name="notification">Notifications</string>
+    <string name="post_photo">Post Photo</string>
+    <string name="upload_photos">Upload Photo</string>
+    <string name="description">Description*</string>
+    <string name="writesomething">Write something</string>
+    <string name="postlocations">Post Locations</string>
+    <string name="post_video">Post Video</string>
+    <string name="upload_videos">Upload Videos</string>
+
+    <string name="delivered_orders">Delivered Orders</string>
+    <string name="rejected_orders">Rejected Orders</string>
+    <string name="search">Search</string>
+
+    <string-array name="designation_spinner">
+        <item>HR</item>
+        <item>Sales Executive</item>
+        <item>Marketing Executive</item>
+        <item>Franchisor</item>
+        <item>Picker</item>
+        <item>Packer</item>
+        <item>Delivery Boy</item>
+    </string-array>
+
+
+    <string-array name="transport_spinner">
+        <item>Select Transport</item>
+        <item>Navata</item>
+        <item>SRMT</item>
+        <item>BMPS</item>
+        <item>Kaveri</item>
+        <item>Navya</item>
+    </string-array>
+
+    <string name="source_location">Pick Source</string>
+    <string name="destination_location">Pick Destination</string>
+
+    <string name="no_data">No Data Found</string>
+
+    <string name="order_cancelled">Order cancelled successfully</string>
+
+    <string name="location_mandatory">Location is mandatory</string>
+
+    <string name="saveproceed">Save &amp; Proceed</string>
+    <string name="Rs">\u20B9</string>
+
+    <string name="fullname">Full Name</string>
+    <string name="mobileno">Mobile Number</string>
+    <string name="email">Email ID</string>
+    <string name="addrs">Address</string>
+
+
+    <string name="branchname">Branch Name *</string>
+
+    <string name="submitbtn">Submit</string>
+
+    <string name="agritechproducts">Agritech Products</string>
+    <string name="agriscienceproducts">Agriscience Products</string>
+    <string name="gallery">Gallery</string>
+
+    <string name="agreetermsconditions"><u><b> Terms and Conditions</b></u></string>
+    <string name="confirmsignout">Confirm Sign out?</string>
+
+    <string name="aboutsustxt">Nova Agritech Pvt ltd, established in 2007, as a research based company with manufacturing facilities located in Hyderabad. The company has won several awards for technical innovation and outstanding performance in the Agri Inputs industry and has many firsts in the field of Bio Stimulants and Micronutrients.
+Through vibrant R&amp;D efforts, our innovations has marked the rise of Nova Agritech Pvt Ltd (NAPL) from a small unit in 2007 to one of the most successful and reputed companies in the Agrochemical Industry now. A strong and passionate team in our organization with expertise in industry has capitalized the company to take forward the vision of management.
+This has led to the production of vital substitute products and cost-effective agrochemicals on a large scale and consequently to a strong, competitive national and international presence. And all this has been made possible by the vision and unswerving dedication and commitment of our Team.</string>
+
+    <string name="declartion"><u>Declaration </u>:</string>
+    <string name="declarationtext">We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct and that my /our Registration Under GST Act  -2017 is valid on the date  of this bill.</string>
+    <string name="termsconditions"><u>Terms and Conditions </u>:</string>
+    <string name="termsfirstpoint">All Goods  returned for replacement must be in Saleable Condition  with Original Packing.</string>
+    <string name="termssecondpoint">We are not responsible for any transit damage, loss or Leakage.</string>
+    <string name="termsthirdpoint">24% PA Interest will be  Charged for the Delayed payment.</string>
+
+    <string name="ourvision">Our Vision</string>
+    <string name="ourmission">Our Mission</string>
+    <string name="aboutus">About Us:</string>
+    <string name="cmdmessage">CMD Message</string>
+
+  <!--  <string name="agriscence_ourvisionval">Nova AgriScience’s vision is to be a global leader in provision of comprehensive agriculture technology solutions while balancing the goals between food security and environment sustainability. The company aims to be recognized as one of the innovators in the segment and be an employer of choice by year 2020.</string>
+    <string name="agriscence_ourmissionval">Nova Agri Science’s mission is to provide a wide range of cutting edge agriput solutions through continued and organized research and focus towards quality and excellence, ultimately leading to an ecologically sustainable, nutritionally balanced and financially profitable farming community.</string>
+    <string name="agriscence_aboutusval">Nova Agri Sciences Pvt. Ltd. belongs to a Group Companies of Nova. The Management of Nova Agri Sciences Pvt. Ltd. consists of Directors with good experience and insight. Admirable Foundation and Passion to win are what set forth our Chairman Mr. Yeluri Sambasiva Rao who unstoppably drives his companies for continuous Reinvention and the Delineation.
+        <p>Establishment of Nova Started 11 years ago in 2007 making Hyderabad as its base. Nova believed in research which motivated group's vision to broaden its base from small entrepreneurship to a big Agri input base company. Nova's enormity led important and consequential establishment of Nova Agri Tech Pvt Limited which deals with Plant Growth Promotors, Bio-Pesticides, Horticultural Equipment’s, Micro Nutrients, and Water Soluble Fertilizers. One of the potent and influential dimension in to the one more feather of its cap is establishment of Nova Agri Sciences Pvt. Ltd.</p>
+        <p>Nova Agri Sciences Pvt. Ltd. has a very professionally self-driven team under the able guidance of Mr.Yeluri Sambasiva Rao, Group Chairman taking this new Business to make a Global Presence. Nova Agri Sciences Pvt. Ltd.   dealing with Core Business of Manufacturing and Marketing of various group of Plant Protection Chemicals which required to cater major crops grown in India.</p>
+        <p>We Nova Agri Sciences Pvt. Ltd. having a list of registered Pesticides are about 170 molecules which are predominant requirement of the Indian Agriculture towards itsCrop Protection. The organisation is looking forward to manufacture and market some exclusive molecules for better protection of important crops of India.</p>
+    </string>
+    <string name="agriscence_cmdmessageval">I Believe that Eco- Friendly, Biological and Organic Agri inputs, when properly managed, have immense potential for improved agricultural production and protection of ecosystem. These in turn have variable positive effects on ecological balance, food and nutrition security, all of which are key prerequisites for attainment of sustainable socio-economic development and human wellbeing.</string>
+
+
+    <string name="agritech_ourvisionval">Nova Agri tech’s vision is to be a global leader in provision of comprehensive agriculture technology solutions while balancing the goals between food security and environment sustainability. The company aims to be recognized as one of the innovators in the segment and be an employer of choice by year 2020.</string>
+    <string name="agritech_ourmissionval">Nova Agritech’s mission is to provide a wide range of cutting edge agriput solutions through continued and organized research and focus towards quality and excellence, ultimately leading to an ecologically sustainable, nutritionally balanced and financially profitable farming community.</string>
+
+    <string name="agritech_cmdmessageval">I Believe that Eco-friendly, Biological and Organic Agri inputs, when properly managed, have immense potential for improved agricultural production and protection of ecosystem. These in turn have variable positive effects on ecological balance, food and nutrition security, all of which are key prerequisites for attainment of sustainable socio-economic development and human wellbeing.</string>
+-->
+    <string name="availablewalletbalance">Pending Balance</string>
+
+
+</resources>
