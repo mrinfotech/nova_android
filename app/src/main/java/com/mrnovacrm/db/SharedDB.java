@@ -21,7 +21,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class SharedDB {
     // public static final String URL = "http://mrinfotechs.in/nova_v1/";
-   public static final String URL = "http://mrinfotechs.in/nova_test/";
+//   public static final String URL = "http://mrinfotechs.in/nova_test/";
+   public static final String URL = "http://jujube.co.in/nova_v1/";
    // public static final String URL = "http://mitrayainfo.com/nova_v1/";
     public static final String defaultVal = "NO VALUE";
     private static final String IS_VALID = "IsVerified";

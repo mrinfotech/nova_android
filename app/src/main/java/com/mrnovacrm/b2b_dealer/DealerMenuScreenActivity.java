@@ -49,10 +49,13 @@ import com.mrnovacrm.login.LoginActivity;
 import com.mrnovacrm.model.ContactsModelDTO;
 import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.Product;
+import com.mrnovacrm.model.SellerDTO;
+import com.mrnovacrm.model.SellersOrdersListDTO;
 import com.mrnovacrm.userprofile.UserProfileActivity;
 import com.mrnovacrm.utils.Config;
 import com.mrnovacrm.utils.NotificationUtils;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import retrofit2.Call;
@@ -209,6 +212,9 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 fragment = new StoreOrdersTabFragment();
                 break;
             case 4:
+                getDiscounts();
+                break;
+            case 5:
                 if (SHORTFORM.equals("SE")) {
                     // mToolbar.setTitle("Dealers List");
                     Intent intent = new Intent(getApplicationContext(), FinanceEmployeesListActivity.class);
@@ -222,7 +228,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 }
                 break;
 
-            case 5:
+            case 6:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Dealer Registration");
                     fragment = new DealerRegistrationFragment();
@@ -232,7 +238,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 }
                 break;
 
-            case 6:
+            case 7:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Invoice");
                     fragment = new DispatchInvoiceListFragment();
@@ -243,7 +249,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     fragment = new DispatchInvoiceListFragment();
                 }
                 break;
-            case 7:
+            case 8:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Received Orders");
                     //      fragment = new ReceivedOrdersFragment();
@@ -253,7 +259,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     fragment = new DealerWalletFragment();
                 }
                 break;
-            case 8:
+            case 9:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Track Order");
                     fragment = new TrackOrderListFragment();
@@ -263,7 +269,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 }
                 break;
 
-            case 9:
+            case 10:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Wallet");
                     fragment = new SalesExecutiveWalletFragment();
@@ -272,7 +278,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     fragment = new ChangePasswordFragment();
                 }
                 break;
-            case 10:
+            case 11:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Notifications");
                     fragment = new NotificationFragment();
@@ -280,13 +286,13 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     showLogout();
                 }
                 break;
-            case 11:
+            case 12:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Change Password");
                     fragment = new ChangePasswordFragment();
                 }
                 break;
-            case 12:
+            case 13:
                 if (SHORTFORM.equals("SE")) {
                     showLogout();
                 }
@@ -302,6 +308,10 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
             fragmentTransaction.replace(R.id.container_body, fragment);
             fragmentTransaction.commit();
         }
+    }
+
+    public  void getDiscounts(){
+        adad
     }
 
     private void getCartCount() {

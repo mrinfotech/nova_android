@@ -207,6 +207,10 @@ public interface RetrofitAPI {
     @GET("master/discount_points")
     Call<SellerDTO> getDiscountPoints();
 
+    @GET("Discounts/companies")
+    Call<SellerDTO> getDiscounts();
+
+
     @GET("categories")
     Call<CategoryDTO> categoriesList(@Query("category") String category);
 
