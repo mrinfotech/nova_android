@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/company_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/dropdownimagevalnew" />
+
+            <Spinner
+                android:id="@+id/dealer_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dropdownimagevalnew" />
+
+            <Spinner
+                android:id="@+id/product_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dropdownimagevalnew" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <EditText
+                    android:id="@+id/discount_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edittext"
+                    android:hint="Discounts"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/light_black"
+                    android:textSize="14sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/appbackground"/>
+
+
+            <Spinner
+                android:id="@+id/reference_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dropdownimagevalnew" />
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:gravity="right"
+        android:paddingBottom="20dp">
+
+        <Button
+            android:id="@+id/nextbtn"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/appcolorbuttonbg"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</RelativeLayout>

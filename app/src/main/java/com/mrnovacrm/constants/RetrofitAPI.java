@@ -3,13 +3,17 @@ package com.mrnovacrm.constants;
 import com.mrnovacrm.model.BranchesDTO;
 import com.mrnovacrm.model.CategoryDTO;
 import com.mrnovacrm.model.Checkout;
+import com.mrnovacrm.model.CompaniesDTO;
 import com.mrnovacrm.model.DailyOrders;
+import com.mrnovacrm.model.DealersDTO;
 import com.mrnovacrm.model.DeliveryDTO;
 import com.mrnovacrm.model.DemoGraphicsDTO;
 import com.mrnovacrm.model.EmployeeDTO;
+import com.mrnovacrm.model.EmployeesDiscountsDTO;
 import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.Order;
 import com.mrnovacrm.model.Product;
+import com.mrnovacrm.model.ProductsDiscountsDTO;
 import com.mrnovacrm.model.SearchItemsDTO;
 import com.mrnovacrm.model.SellerDTO;
 import com.mrnovacrm.model.StoresDTO;
@@ -208,7 +212,18 @@ public interface RetrofitAPI {
     Call<SellerDTO> getDiscountPoints();
 
     @GET("Discounts/companies")
-    Call<SellerDTO> getDiscounts();
+    Call<CompaniesDTO> getDiscounts();
+
+    @GET("discounts/dealers")
+    Call<DealersDTO> getDiscountsDealers(@Query("company") String company);
+
+    @GET("discounts/products")
+    Call<ProductsDiscountsDTO> getDiscountsProducts(@Query("company") String company);
+
+    @GET("discounts/employees")
+    Call<EmployeesDiscountsDTO> getDiscountsEmployees(@Query("company") String company);
+
+
 
 
     @GET("categories")

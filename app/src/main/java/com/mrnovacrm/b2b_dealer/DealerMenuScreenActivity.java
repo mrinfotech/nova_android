@@ -46,11 +46,11 @@ import com.mrnovacrm.constants.RetrofitAPI;
 import com.mrnovacrm.constants.TransparentProgressDialog;
 import com.mrnovacrm.db.SharedDB;
 import com.mrnovacrm.login.LoginActivity;
+import com.mrnovacrm.model.CompaniesDTO;
 import com.mrnovacrm.model.ContactsModelDTO;
 import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.Product;
-import com.mrnovacrm.model.SellerDTO;
-import com.mrnovacrm.model.SellersOrdersListDTO;
+import com.mrnovacrm.model.RecordListDTO;
 import com.mrnovacrm.userprofile.UserProfileActivity;
 import com.mrnovacrm.utils.Config;
 import com.mrnovacrm.utils.NotificationUtils;
@@ -212,7 +212,10 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 fragment = new StoreOrdersTabFragment();
                 break;
             case 4:
-                getDiscounts();
+                // Add company fragment
+                mToolbar.setTitle("Discounts");
+                fragment = new DiscountsFragment();
+
                 break;
             case 5:
                 if (SHORTFORM.equals("SE")) {
@@ -310,9 +313,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
         }
     }
 
-    public  void getDiscounts(){
-        adad
-    }
+
 
     private void getCartCount() {
         final TransparentProgressDialog dialog = new TransparentProgressDialog(this);
