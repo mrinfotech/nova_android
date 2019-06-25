@@ -223,7 +223,13 @@ public interface RetrofitAPI {
     @GET("discounts/employees")
     Call<EmployeesDiscountsDTO> getDiscountsEmployees(@Query("company") String company);
 
-
+    @FormUrlEncoded
+    @POST("discounts/discountRequest_post")
+    Call<Login> discountRequest(@Field("company") String company,@Field("dealer") String dealer,
+                                   @Field("product") String product,
+                                   @Field("requestTo") String requestTo, @Field("requestBy") String requestBy,
+                                   @Field("startDate") String startDate,@Field("endDate") String endDate,
+                                   @Field("discount") String discount);
 
 
     @GET("categories")

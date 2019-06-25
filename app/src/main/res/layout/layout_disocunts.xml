@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -8,10 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom"
+        android:layout_marginTop="10dp"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
-        android:paddingBottom="10dp"
-        android:layout_marginTop="10dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -40,6 +40,13 @@
                 android:layout_marginTop="15dp"
                 android:background="@drawable/dropdownimagevalnew" />
 
+            <Spinner
+                android:id="@+id/reference_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/dropdownimagevalnew" />
+
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="fill_parent"
@@ -61,18 +68,94 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/appbackground"/>
+                android:background="@color/appbackground" />
 
 
-            <Spinner
-                android:id="@+id/reference_spinner"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/dropdownimagevalnew" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2.1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edtxt_fromdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/edittext"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:drawableRight="@drawable/ic_date_range_white_36dp"
+                        android:editable="false"
+                        android:hint="From Date"
+                        android:paddingLeft="3dp"
+                        android:singleLine="true"
+                        android:textColor="@color/light_black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/lightgray" />
+
+                </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.1"
+                    android:gravity="center">
 
+                    <View
+                        android:layout_width="0.3dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edtxt_todate"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:background="@drawable/edittext"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:drawableRight="@drawable/ic_date_range_white_36dp"
+                        android:editable="false"
+                        android:hint="To Date"
+                        android:paddingStart="3dp"
+                        android:paddingLeft="3dp"
+                        android:singleLine="true"
+                        android:textColor="@color/light_black"
+                        android:textSize="13sp"
+                        tools:ignore="Autofill,TextFields" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.3dp"
+                        android:background="@color/lightgray" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
@@ -81,16 +164,14 @@
         android:id="@+id/bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
-        android:gravity="right"
-        android:paddingBottom="20dp">
+        android:layout_alignParentBottom="true">
 
         <Button
-            android:id="@+id/nextbtn"
+            android:id="@+id/buttonSubmit"
             android:layout_width="100dp"
             android:layout_height="35dp"
+            android:layout_marginBottom="20dp"
+            android:layout_centerInParent="true"
             android:background="@drawable/appcolorbuttonbg"
             android:gravity="center"
             android:text="@string/submit"

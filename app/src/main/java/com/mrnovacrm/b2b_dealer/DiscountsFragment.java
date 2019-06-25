@@ -1,14 +1,21 @@
 package com.mrnovacrm.b2b_dealer;
 
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,11 +30,13 @@ import com.mrnovacrm.model.DealersDTO;
 import com.mrnovacrm.model.DealersRecordListDTO;
 import com.mrnovacrm.model.EmployeesDiscountsDTO;
 import com.mrnovacrm.model.EmployeesRecordListDTO;
+import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.ProductsDiscountsDTO;
 import com.mrnovacrm.model.ProductsRecordListDTO;
 import com.mrnovacrm.model.RecordListDTO;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import retrofit2.Call;
@@ -38,10 +47,14 @@ import retrofit2.Response;
  * Created by harish on 6/24/2019.
  */
 
-public class DiscountsFragment extends Fragment {
+public class DiscountsFragment extends Fragment implements View.OnTouchListener {
 
     Spinner companySpinner, dealerSpinner, productSpinner, referenceSpinner;
     EditText discountText;
+    @SuppressLint("StaticFieldLeak")
+    public static EditText edtxt_fromdate, edtxt_todate;
+    Button buttonSubmit;
+
 
     List<RecordListDTO> sellersList;
     List<DealersRecordListDTO> dealersRecordList;
@@ -50,6 +63,7 @@ public class DiscountsFragment extends Fragment {
     ArrayList<String> companyNames, dealerNameList, productsNameList, employeesNameList;
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -61,9 +75,22 @@ public class DiscountsFragment extends Fragment {
         productSpinner = rootView.findViewById(R.id.product_spinner);
         referenceSpinner = rootView.findViewById(R.id.reference_spinner);
         discountText = rootView.findViewById(R.id.discount_txt);
+        buttonSubmit = rootView.findViewById(R.id.buttonSubmit);
 
+        edtxt_fromdate = rootView.findViewById(R.id.edtxt_fromdate);
+        edtxt_todate = rootView.findViewById(R.id.edtxt_todate);
+
+        edtxt_fromdate.setOnTouchListener(DiscountsFragment.this);
+        edtxt_todate.setOnTouchListener(DiscountsFragment.this);
 
         getDiscountCompany();
+
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendDiscountRequest();
+            }
+        });
 
 
         return rootView;
@@ -319,9 +346,6 @@ public class DiscountsFragment extends Fragment {
 
                                     Toast.makeText(getActivity(), employeesRecordList.get(pos - 1).getUniqId(), Toast.LENGTH_SHORT).show();
 
-
-//                                    getDealersList(sellersList.get(pos).getCompanyId());
-
                                 }
                             }
 
@@ -349,5 +373,127 @@ public class DiscountsFragment extends Fragment {
             }
         });
     }
+
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN && view.getId() == R.id.edtxt_fromdate) {
+            Bundle bundle = new Bundle();
+            bundle.putString("DateType", "fromDate");
+            DialogFragment fromfragment = new DatePickerFragment();
+            fromfragment.setArguments(bundle);
+            assert getFragmentManager() != null;
+            fromfragment.show(getFragmentManager(), "Date Picker");
+        } else if (motionEvent.getAction() == MotionEvent.ACTION_DOWN && view.getId() == R.id.edtxt_todate) {
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("DateType", "toDate");
+            DialogFragment tofragment = new DatePickerFragment();
+            tofragment.setArguments(bundle2);
+            assert getFragmentManager() != null;
+            tofragment.show(getFragmentManager(), "Date Picker");
+        }
+        return true;
+    }
+
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            //Use the current date as the default date in the date picker
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            String type;
+
+            if (getArguments() != null) {
+                type = getArguments().getString("DateType");
+                assert type != null;
+                if (type.equals("fromDate")) {
+                    return new DatePickerDialog(getActivity(), from_dateListener, year, month, day);
+
+                } else if (type.equals("toDate")) {
+                    return new DatePickerDialog(getActivity(), to_dateListener, year, month, day);
+                }
+            }
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        private DatePickerDialog.OnDateSetListener from_dateListener =
+                new DatePickerDialog.OnDateSetListener() {
+
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        int month = monthOfYear + 1;
+                        edtxt_fromdate.setText(dayOfMonth + "-" + month + "-" + year);
+
+                    }
+                };
+        private DatePickerDialog.OnDateSetListener to_dateListener =
+                new DatePickerDialog.OnDateSetListener() {
+
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        int month = monthOfYear + 1;
+                        edtxt_todate.setText(dayOfMonth + "-" + month + "-" + year);
+                    }
+                };
+
+
+        @Override
+        public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+
+        }
+    }
+
+
+    private void sendDiscountRequest() {
+
+        final TransparentProgressDialog dialog = new TransparentProgressDialog(getActivity());
+        dialog.show();
+        RetrofitAPI mApiService = SharedDB.getInterfaceService();
+
+
+        Log.e("company", companySpinner.getSelectedItem().toString());
+        Log.e("dealer", dealerSpinner.getSelectedItem().toString());
+        Log.e("product", productSpinner.getSelectedItem().toString());
+        Log.e("requestTo", referenceSpinner.getSelectedItem().toString());
+        Log.e("requestBy", SharedDB.USERID);
+        Log.e("startDate", edtxt_fromdate.getText().toString());
+        Log.e("endDate", edtxt_todate.getText().toString());
+        Log.e("discount", discountText.getText().toString());
+
+        Call<Login> mService = mApiService.discountRequest(companySpinner.getSelectedItem().toString()
+                , dealerSpinner.getSelectedItem().toString()
+                , productSpinner.getSelectedItem().toString(),
+                referenceSpinner.getSelectedItem().toString(), SharedDB.USERID
+                , edtxt_fromdate.getText().toString(), edtxt_todate.getText().toString(), discountText.getText().toString());
+        mService.enqueue(new Callback<Login>() {
+            @Override
+            public void onResponse(@NonNull Call<Login> call, @NonNull Response<Login> response) {
+                Login mLoginObject = response.body();
+                Log.e("response", " :" + response);
+                dialog.dismiss();
+                try {
+                    String status = mLoginObject.getStatus();
+                    if (status.equals("1")) {
+                        Toast.makeText(getActivity(), mLoginObject.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Login> call, @NonNull Throwable t) {
+                call.cancel();
+                dialog.dismiss();
+                Log.e("Throwable", " :" + t.getMessage());
+                Toast.makeText(getActivity(), getResources().getString(R.string.server_error), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }
