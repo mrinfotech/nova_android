@@ -425,7 +425,7 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         int month = monthOfYear + 1;
-                        edtxt_fromdate.setText(dayOfMonth + "-" + month + "-" + year);
+                        edtxt_fromdate.setText(year + "-" + month + "-" + dayOfMonth);
 
                     }
                 };
@@ -435,7 +435,7 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         int month = monthOfYear + 1;
-                        edtxt_todate.setText(dayOfMonth + "-" + month + "-" + year);
+                        edtxt_todate.setText(year + "-" + month + "-" + dayOfMonth);
                     }
                 };
 
