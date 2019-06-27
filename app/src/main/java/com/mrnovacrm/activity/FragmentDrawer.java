@@ -122,6 +122,7 @@ public class FragmentDrawer extends Fragment {
             R.drawable.menu_orders,
             R.drawable.menu_dealerslist,
             R.drawable.menu_dealerslist,
+            R.drawable.menu_dealerslist,
             R.drawable.menu_delerregistration,
             R.drawable.menu_invoice,
             R.drawable.menu_invoice,

@@ -215,9 +215,14 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 // Add company fragment
                 mToolbar.setTitle("Discounts");
                 fragment = new DiscountsFragment();
-
                 break;
             case 5:
+                // Add company fragment
+                mToolbar.setTitle("Discounts Request");
+                fragment = new DiscountsRequestFragment();
+                break;
+
+            case 6:
                 if (SHORTFORM.equals("SE")) {
                     // mToolbar.setTitle("Dealers List");
                     Intent intent = new Intent(getApplicationContext(), FinanceEmployeesListActivity.class);
@@ -231,7 +236,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 }
                 break;
 
-            case 6:
+            case 7:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Dealer Registration");
                     fragment = new DealerRegistrationFragment();
@@ -241,7 +246,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 }
                 break;
 
-            case 7:
+            case 8:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Invoice");
                     fragment = new DispatchInvoiceListFragment();
@@ -252,7 +257,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     fragment = new DispatchInvoiceListFragment();
                 }
                 break;
-            case 8:
+            case 9:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Received Orders");
                     //      fragment = new ReceivedOrdersFragment();
@@ -262,7 +267,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     fragment = new DealerWalletFragment();
                 }
                 break;
-            case 9:
+            case 10:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Track Order");
                     fragment = new TrackOrderListFragment();
@@ -272,7 +277,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                 }
                 break;
 
-            case 10:
+            case 11:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Wallet");
                     fragment = new SalesExecutiveWalletFragment();
@@ -281,7 +286,7 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     fragment = new ChangePasswordFragment();
                 }
                 break;
-            case 11:
+            case 12:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Notifications");
                     fragment = new NotificationFragment();
@@ -289,13 +294,13 @@ public class DealerMenuScreenActivity extends AppCompatActivity implements Fragm
                     showLogout();
                 }
                 break;
-            case 12:
+            case 13:
                 if (SHORTFORM.equals("SE")) {
                     mToolbar.setTitle("Change Password");
                     fragment = new ChangePasswordFragment();
                 }
                 break;
-            case 13:
+            case 14:
                 if (SHORTFORM.equals("SE")) {
                     showLogout();
                 }

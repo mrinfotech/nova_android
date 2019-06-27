@@ -128,6 +128,7 @@
         <item>@string/nav_item_products</item>
         <item>@string/nav_item_orders</item>
         <item>Discounts</item>
+        <item>Discounts Request</item>
         <item>Dealers List</item>
         <item>@string/dealerreg</item>
         <item>@string/invoice</item>

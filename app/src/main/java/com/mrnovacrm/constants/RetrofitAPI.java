@@ -8,6 +8,7 @@ import com.mrnovacrm.model.DailyOrders;
 import com.mrnovacrm.model.DealersDTO;
 import com.mrnovacrm.model.DeliveryDTO;
 import com.mrnovacrm.model.DemoGraphicsDTO;
+import com.mrnovacrm.model.DiscountRquestDTO;
 import com.mrnovacrm.model.EmployeeDTO;
 import com.mrnovacrm.model.EmployeesDiscountsDTO;
 import com.mrnovacrm.model.Login;
@@ -234,6 +235,10 @@ public interface RetrofitAPI {
                                      @Field("requestTo") String requestTo, @Field("requestBy") String requestBy,
                                      @Field("startDate") String startDate, @Field("endDate") String endDate,
                                      @Field("discount") String discount);
+
+    @GET("discounts/requests")
+    Call<DiscountRquestDTO> getDiscountsRequest(@Query("user") String user);
+
 
 
     @GET("categories")
