@@ -3,6 +3,7 @@ package com.mrnovacrm.db;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +70,10 @@ public class SharedDB {
     public static final String BRANCH_COUNT = "branchcount";
     public static SharedPreferences multirolesharedpreferences;
     public static final String MULTIPREFERENCES = "multirolePrefs";
+
+    public static final String PREFS_LOGIN_USERNAME_KEY = "__USERNAME__";
+    public static final String PREFS_LOGIN_PASSWORD_KEY = "__PASSWORD__";
+
     static SharedPreferences.Editor multiroleeditor;
 
     public static RetrofitAPI getInterfaceService() {
@@ -152,6 +157,24 @@ public class SharedDB {
         loginsharedpreferences = context.getSharedPreferences(LOGINPREFERENCES,
                 Context.MODE_PRIVATE);
         return loginsharedpreferences.getBoolean(IS_VALID, false);
+    }
+
+    public static void saveToLoginPrefs(Context context, String userName, String password) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        final SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(PREFS_LOGIN_USERNAME_KEY, userName);
+        editor.putString(PREFS_LOGIN_PASSWORD_KEY, password);
+        editor.apply();
+    }
+
+    public static String getUserName(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getString(PREFS_LOGIN_USERNAME_KEY, "");
+    }
+
+    public static String getPassword(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getString(PREFS_LOGIN_PASSWORD_KEY, "");
     }
 
     public static void clearAuthentication(Context context) {

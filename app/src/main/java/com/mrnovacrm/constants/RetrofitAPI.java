@@ -14,12 +14,16 @@ import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.Order;
 import com.mrnovacrm.model.Product;
 import com.mrnovacrm.model.ProductsDiscountsDTO;
+import com.mrnovacrm.model.ResultsDTO;
 import com.mrnovacrm.model.SearchItemsDTO;
 import com.mrnovacrm.model.SellerDTO;
 import com.mrnovacrm.model.StoresDTO;
 import com.mrnovacrm.model.Track;
 import com.mrnovacrm.model.TransportDTO;
 import com.mrnovacrm.model.WalletDTO;
+
+import org.json.JSONObject;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -224,12 +228,12 @@ public interface RetrofitAPI {
     Call<EmployeesDiscountsDTO> getDiscountsEmployees(@Query("company") String company);
 
     @FormUrlEncoded
-    @POST("discounts/discountRequest_post")
-    Call<Login> discountRequest(@Field("company") String company,@Field("dealer") String dealer,
-                                   @Field("product") String product,
-                                   @Field("requestTo") String requestTo, @Field("requestBy") String requestBy,
-                                   @Field("startDate") String startDate,@Field("endDate") String endDate,
-                                   @Field("discount") String discount);
+    @POST("discounts/discountRequest")
+    Call<ResultsDTO> discountRequest(@Field("company") String company, @Field("dealer") String dealer,
+                                     @Field("product") String product,
+                                     @Field("requestTo") String requestTo, @Field("requestBy") String requestBy,
+                                     @Field("startDate") String startDate, @Field("endDate") String endDate,
+                                     @Field("discount") String discount);
 
 
     @GET("categories")

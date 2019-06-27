@@ -164,7 +164,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void loginProcessWithRetrofit(String user_name, String user_password) {
+    private void loginProcessWithRetrofit(final String user_name, final String user_password) {
         final TransparentProgressDialog dialog = new TransparentProgressDialog(context);
         dialog.show();
         RetrofitAPI mApiService = SharedDB.getInterfaceService();
@@ -181,6 +181,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Log.e("Status", " :" + status);
                     String message = mLoginObject.getMessage();
                     if (status.equals("1")) {
+                        SharedDB.saveToLoginPrefs(getApplicationContext(), user_name, user_password);
                         String role = mLoginObject.getRole();
                         String primaryId = mLoginObject.getPrimaryid();
                         String userName = mLoginObject.getUserName();
