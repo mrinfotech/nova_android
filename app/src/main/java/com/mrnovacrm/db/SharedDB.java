@@ -177,13 +177,19 @@ public class SharedDB {
         return prefs.getString(PREFS_LOGIN_PASSWORD_KEY, "");
     }
 
+    public static void clearLoginPrefs(Context context) {
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        sharedPrefs.edit().clear().apply();
+    }
+
     public static void clearAuthentication(Context context) {
         try {
             loginsharedpreferences = context.getSharedPreferences(
                     LOGINPREFERENCES, Context.MODE_PRIVATE);
             logineditor = loginsharedpreferences.edit();
             logineditor.clear();
-            logineditor.commit();
+            logineditor.apply();
+            clearLoginPrefs(context);
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
