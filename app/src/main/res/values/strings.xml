@@ -61,6 +61,7 @@
         <item>@string/dashboard</item>
         <item>@string/managebranches</item>
         <item>Manage Finance Admin</item>
+        <item>Discounts Request</item>
         <item>Invoice</item>
        <!-- <item>@string/notifications</item>-->
         <item>@string/nav_item_changepswrd</item>
@@ -462,6 +463,7 @@ This has led to the production of vital substitute products and cost-effective a
     <string name="agritech_cmdmessageval">I Believe that Eco-friendly, Biological and Organic Agri inputs, when properly managed, have immense potential for improved agricultural production and protection of ecosystem. These in turn have variable positive effects on ecological balance, food and nutrition security, all of which are key prerequisites for attainment of sustainable socio-economic development and human wellbeing.</string>
 -->
     <string name="availablewalletbalance">Pending Balance</string>
+    <string name="reset">Reset</string>
 
 
 </resources>

@@ -10,6 +10,7 @@
     <color name="ordersummaryheadercolor">#141956</color>
     <color name="lightgray">#bfbfbf</color>
     <color name="bluecolor">#282e6c</color>
+    <color name="resetColor">#DC3545</color>
 
     <!--<color name="appbackground">#fe5b3f</color>-->
     <color name="appbackground">#f26722</color>

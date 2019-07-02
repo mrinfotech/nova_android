@@ -23,6 +23,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.mrnovacrm.R;
 import com.mrnovacrm.activity.ApplicationReloadActivity;
 import com.mrnovacrm.activity.FragmentDrawer;
+import com.mrnovacrm.b2b_dealer.DiscountsRequestFragment;
 import com.mrnovacrm.b2b_dispatch_dept.DispatchInvoiceListFragment;
 import com.mrnovacrm.b2b_finance_dept.ManageEmployeeDeatailsFragment;
 import com.mrnovacrm.changepassword.ChangePasswordFragment;
@@ -197,6 +198,11 @@ public class SuperAdminMenuScrenActivity extends AppCompatActivity implements Fr
                 break;
 
             case 4:
+                mToolbar.setTitle("Discounts Request");
+                fragment = new DiscountsRequestFragment();
+                break;
+
+            case 5:
                 mToolbar.setTitle("Invoice");
                 fragment = new DispatchInvoiceListFragment();
                 break;
@@ -205,11 +211,11 @@ public class SuperAdminMenuScrenActivity extends AppCompatActivity implements Fr
                 fragment = new NotificationFragment();
                 break;*/
 
-            case 5:
+            case 6:
                 mToolbar.setTitle("Change Password");
                 fragment = new ChangePasswordFragment();
                 break;
-            case 6:
+            case 7:
                 showLogout();
                 break;
             default:

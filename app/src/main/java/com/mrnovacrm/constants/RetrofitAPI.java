@@ -236,6 +236,15 @@ public interface RetrofitAPI {
                                      @Field("startDate") String startDate, @Field("endDate") String endDate,
                                      @Field("discount") String discount);
 
+    @FormUrlEncoded
+    @POST("discounts/discountRequest")
+    Call<ResultsDTO> editDiscountRequest(@Field("company") String company, @Field("dealer") String dealer,
+                                     @Field("product") String product,
+                                     @Field("requestTo") String requestTo, @Field("requestBy") String requestBy,
+                                     @Field("startDate") String startDate, @Field("endDate") String endDate,
+                                     @Field("discount") String discount,@Field("reqStatus") String reqStatus);
+
+
     @GET("discounts/requests")
     Call<DiscountRquestDTO> getDiscountsRequest(@Query("user") String user);
 

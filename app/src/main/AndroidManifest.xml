@@ -9,9 +9,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
- <!--   <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.SEND_SMS" />-->
+    <!--   <uses-permission android:name="android.permission.RECEIVE_SMS" />
+       <uses-permission android:name="android.permission.READ_SMS" />
+       <uses-permission android:name="android.permission.SEND_SMS" />-->
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -254,32 +254,41 @@
             android:name=".wallet.WalletCreditListActivity"
             android:screenOrientation="portrait" />
 
-        <activity android:name=".wallet.CreditDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".wallet.CreditDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".wallet.DebitDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".wallet.DebitDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".wallet.ChequestatusListActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".wallet.ChequestatusListActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".wallet.ChequeDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".wallet.ChequeDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".wallet.StatementListActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".wallet.StatementListActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".b2b_admin.AdminPaymentsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".b2b_admin.AdminPaymentsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".userprofile.EmployeeFullProfileActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".userprofile.EmployeeFullProfileActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".login.LoginRoleBranchesActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".login.LoginRoleBranchesActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".b2b_dispatch_dept.UpdateLRNumberDetails"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".b2b_dispatch_dept.UpdateLRNumberDetails"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".MainActivity"
@@ -291,23 +300,34 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.NotificationListDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.NotificationListDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".b2b_dealer.NotificationStatementActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".b2b_dealer.NotificationStatementActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".b2b_finance_dept.FinancePlacedOrderDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".b2b_finance_dept.FinancePlacedOrderDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".b2b_dealer.FinanceTransportOrderDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".b2b_dealer.FinanceTransportOrderDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".b2b_dispatch_dept.DispatchRejectedHistoryDetailsActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".b2b_dispatch_dept.DispatchRejectedHistoryDetailsActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".activity.DemoActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.DemoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".b2b_dealer.EditDiscountRequestActivity"
+            android:screenOrientation="portrait" />
+
 
         <!-- Firebase Notifications -->
         <service android:name=".firebaseservice.MyFirebaseMessagingService">
