@@ -14,14 +14,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.mrnovacrm.R;
-import com.mrnovacrm.adapter.CompanyAdapter;
+import com.mrnovacrm.adapter.AutoCompleteCompanyAdapter;
 import com.mrnovacrm.constants.RetrofitAPI;
 import com.mrnovacrm.constants.TransparentProgressDialog;
 import com.mrnovacrm.db.SharedDB;
@@ -30,13 +30,10 @@ import com.mrnovacrm.model.DealersDTO;
 import com.mrnovacrm.model.DealersRecordListDTO;
 import com.mrnovacrm.model.EmployeesDiscountsDTO;
 import com.mrnovacrm.model.EmployeesRecordListDTO;
-import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.ProductsDiscountsDTO;
 import com.mrnovacrm.model.ProductsRecordListDTO;
 import com.mrnovacrm.model.RecordListDTO;
 import com.mrnovacrm.model.ResultsDTO;
-
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -52,7 +49,7 @@ import retrofit2.Response;
 
 public class DiscountsFragment extends Fragment implements View.OnTouchListener {
 
-    Spinner companySpinner, dealerSpinner, productSpinner, referenceSpinner;
+    AutoCompleteTextView companySpinner, dealerSpinner, productSpinner, referenceSpinner;
     EditText discountText;
     @SuppressLint("StaticFieldLeak")
     public static EditText edtxt_fromdate, edtxt_todate;
@@ -91,10 +88,10 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!companySpinner.getSelectedItem().toString().equalsIgnoreCase("Select Company")) {
-                    if (!dealerSpinner.getSelectedItem().toString().equalsIgnoreCase("Select Dealer")) {
-                        if (!productSpinner.getSelectedItem().toString().equalsIgnoreCase("Select Products")) {
-                            if (!referenceSpinner.getSelectedItem().toString().equalsIgnoreCase("Select Employee")) {
+                if (companySpinner.getText().length() > 0) {
+                    if (dealerSpinner.getText().length() > 0) {
+                        if (productSpinner.getText().length() > 0) {
+                            if (referenceSpinner.getText().length() > 0) {
                                 if (discountText.getText().length() > 0) {
                                     if (edtxt_fromdate.getText().length() > 0) {
                                         if (edtxt_todate.getText().length() > 0) {
@@ -149,17 +146,33 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
 
                                 companyNames = new ArrayList<>();
 
-                                companyNames.add("Select Company");
-
                                 for (int i = 0; i < companyRecordList.size(); i++) {
                                     companyNames.add(companyRecordList.get(i).getCompany());
                                 }
 
-
-                                CompanyAdapter adapter = new CompanyAdapter(getActivity(), companyNames);
+                                /*CompanyAdapter adapter = new CompanyAdapter(getActivity(), companyNames);
+                                companySpinner.setAdapter(adapter);
+*/
+                                /* need to implement this functionality for products, dealers, employees*/
+                                AutoCompleteCompanyAdapter adapter = new AutoCompleteCompanyAdapter(getActivity(),
+                                        R.layout.searchautocomplete, R.id.searchtextview, companyNames);
                                 companySpinner.setAdapter(adapter);
 
-                                companySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                                companySpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+
+                                        companyId = companyRecordList.get(pos).getCompanyId();
+
+                                        getDealersList(companyRecordList.get(pos).getCompanyId());
+                                        getProductsList(companyRecordList.get(pos).getCompanyId());
+                                        getEmployeesList(companyRecordList.get(pos).getCompanyId());
+                                    }
+                                });
+
+
+                                /*companySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                     @Override
                                     public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
                                         if (!companySpinner.getSelectedItem().equals("Select Company")) {
@@ -177,7 +190,7 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                                     public void onNothingSelected(AdapterView<?> adapterView) {
 
                                     }
-                                });
+                                });*/
 
 
                             }
@@ -229,7 +242,11 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                         }
 
 
-                        CompanyAdapter adapter = new CompanyAdapter(getActivity(), dealerNameList);
+                        /*CompanyAdapter adapter = new CompanyAdapter(getActivity(), dealerNameList);
+                        dealerSpinner.setAdapter(adapter);*/
+
+                        AutoCompleteCompanyAdapter adapter = new AutoCompleteCompanyAdapter(getActivity(),
+                                R.layout.searchautocomplete, R.id.searchtextview, dealerNameList);
                         dealerSpinner.setAdapter(adapter);
 
 
@@ -281,7 +298,11 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                         }
 
 
-                        CompanyAdapter adapter = new CompanyAdapter(getActivity(), productsNameList);
+                        /*CompanyAdapter adapter = new CompanyAdapter(getActivity(), productsNameList);
+                        productSpinner.setAdapter(adapter);*/
+
+                        AutoCompleteCompanyAdapter adapter = new AutoCompleteCompanyAdapter(getActivity(),
+                                R.layout.searchautocomplete, R.id.searchtextview, productsNameList);
                         productSpinner.setAdapter(adapter);
 
                     } else {
@@ -331,7 +352,11 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                             employeesNameList.add(employeesRecordList.get(i).getUniqId());
                         }
 
-                        CompanyAdapter adapter = new CompanyAdapter(getActivity(), employeesNameList);
+                        /*CompanyAdapter adapter = new CompanyAdapter(getActivity(), employeesNameList);
+                        referenceSpinner.setAdapter(adapter);*/
+
+                        AutoCompleteCompanyAdapter adapter = new AutoCompleteCompanyAdapter(getActivity(),
+                                R.layout.searchautocomplete, R.id.searchtextview, employeesNameList);
                         referenceSpinner.setAdapter(adapter);
 
                     } else {
@@ -353,6 +378,7 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
         });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN && view.getId() == R.id.edtxt_fromdate) {
@@ -434,9 +460,9 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
 
 
         Call<ResultsDTO> mService = mApiService.discountRequest(companyId
-                , dealerSpinner.getSelectedItem().toString()
-                , productSpinner.getSelectedItem().toString()
-                , referenceSpinner.getSelectedItem().toString(), SharedDB.getUserName(getActivity())
+                , dealerSpinner.getText().toString()
+                , productSpinner.getText().toString()
+                , referenceSpinner.getText().toString(), SharedDB.getUserName(getActivity())
                 , edtxt_fromdate.getText().toString(), edtxt_todate.getText().toString()
                 , discountText.getText().toString());
 
@@ -446,6 +472,7 @@ public class DiscountsFragment extends Fragment implements View.OnTouchListener 
                 ResultsDTO mLoginObject = response.body();
                 dialog.dismiss();
                 try {
+                    assert mLoginObject != null;
                     String status = mLoginObject.getStatus();
                     if (status.equals("1")) {
                         Toast.makeText(getActivity(), mLoginObject.getMessage(), Toast.LENGTH_SHORT).show();
