@@ -278,6 +278,7 @@ public class BTProductDetailsActivity extends AppCompatActivity implements View.
                     if (Integer.parseInt(status) == 1) {
                         String itemscount = mProductObject.getItems_count();
                         DealerMenuScreenActivity.updateCartCountNotification(itemscount);
+                        DealerScreenActivity.updateCartCountNotification(itemscount);
                         ProductListActivity.updateCartCountNotification(itemscount);
                         globalShare.setBtfrom("bt");
                     }

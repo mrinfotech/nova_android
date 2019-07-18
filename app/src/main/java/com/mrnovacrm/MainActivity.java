@@ -11,6 +11,7 @@ import com.mrnovacrm.b2b_admin.EmpListActivity;
 import com.mrnovacrm.b2b_dealer.CartListActivity;
 import com.mrnovacrm.b2b_dealer.CheckoutInvoiceReportActivity;
 import com.mrnovacrm.b2b_dealer.DealerMenuScreenActivity;
+import com.mrnovacrm.b2b_dealer.DealerScreenActivity;
 import com.mrnovacrm.b2b_dealer.DealersDataActivity;
 import com.mrnovacrm.b2b_dealer.FinanceTransportOrderDetailsActivity;
 import com.mrnovacrm.b2b_dealer.InvoiceDetailsActivity;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                 globalShare.setDealerMenuSelectedPos("8");
                 Intent intent = new Intent(MainActivity.this,
-                        DealerMenuScreenActivity.class);
+                        DealerScreenActivity.class);
                 startActivity(intent);
             } else if (userType.equals("FM")) {
                 closeDealermethods();
@@ -120,13 +121,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void closeDealermethods() {
 
-        if(FinanceTransportOrderDetailsActivity.mainfinish!=null)
-        {
+        if (FinanceTransportOrderDetailsActivity.mainfinish != null) {
             FinanceTransportOrderDetailsActivity.mainfinish.finish();
         }
 
-        if(NotificationStatementActivity.mainfinish!=null)
-        {
+        if (NotificationStatementActivity.mainfinish != null) {
             NotificationStatementActivity.mainfinish.finish();
         }
 
@@ -174,10 +173,10 @@ public class MainActivity extends AppCompatActivity {
             PackedOrderDetailsActivity.mainfinish.finish();
         }
 
-       if (DispatchMenuScreenActivity.mainfinish != null) {
-           DispatchMenuScreenActivity.mainfinish.finish();
+        if (DispatchMenuScreenActivity.mainfinish != null) {
+            DispatchMenuScreenActivity.mainfinish.finish();
         }
-       if (FinanceReportActivity.mainfinish != null) {
+        if (FinanceReportActivity.mainfinish != null) {
             FinanceReportActivity.mainfinish.finish();
         }
 
@@ -215,6 +214,10 @@ public class MainActivity extends AppCompatActivity {
             DealerMenuScreenActivity.mainfinish.finish();
         }
 
+        if (DealerScreenActivity.mainfinish != null) {
+            DealerScreenActivity.mainfinish.finish();
+        }
+
         if (ProductListActivityNew.mainfinish != null) {
             ProductListActivityNew.mainfinish.finish();
         }
@@ -248,9 +251,6 @@ public class MainActivity extends AppCompatActivity {
         if (TrackOrderDetailsActivity.mainfinish != null) {
             TrackOrderDetailsActivity.mainfinish.finish();
         }
-
-
-
 
 
     }

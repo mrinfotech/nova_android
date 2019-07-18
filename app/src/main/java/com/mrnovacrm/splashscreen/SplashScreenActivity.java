@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.mrnovacrm.R;
 import com.mrnovacrm.b2b_admin.AdminMenuScreenActivity;
 import com.mrnovacrm.b2b_dealer.DealerMenuScreenActivity;
+import com.mrnovacrm.b2b_dealer.DealerScreenActivity;
 import com.mrnovacrm.b2b_delivery_dept.DeliveryMenuScreenActivity;
 import com.mrnovacrm.b2b_dispatch_dept.DispatchMenuScreenActivity;
 import com.mrnovacrm.b2b_finance_dept.FinanceDeptMenuScreenActivity;
@@ -58,7 +59,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                             if(userType.equals("DEALER")) {
                                 globalShare.setDealerMenuSelectedPos("1");
                                 Intent intent = new Intent(SplashScreenActivity.this,
-                                        DealerMenuScreenActivity.class);
+                                        DealerScreenActivity.class);
                                 startActivity(intent);
                             }else  if(userType.equals("FM")){
                                 globalShare.setFinancemenuselectpos("1");

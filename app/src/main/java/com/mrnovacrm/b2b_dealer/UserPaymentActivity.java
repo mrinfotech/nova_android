@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.mrnovacrm.R;
 import com.mrnovacrm.adapter.SpinnerItemsAdapter;
 import com.mrnovacrm.constants.GlobalShare;
@@ -36,16 +37,18 @@ import com.mrnovacrm.model.Checkout;
 import com.mrnovacrm.model.OrdersListDTO;
 import com.mrnovacrm.model.TransportDTO;
 import com.mrnovacrm.model.TransportList;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UserPaymentActivity extends AppCompatActivity implements View.OnClickListener {
-    Button codbtn,paytmbtn,chequebtn;
+    Button codbtn, paytmbtn, chequebtn;
     Context mContext;
     private HashMap<String, String> values;
     private static String PRIMARYID = "";
@@ -53,14 +56,14 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
     private String USERNAME = "";
     private String SHORTFORM = "";
     private String ADDRESSIDVAL = "";
-   // private static double LATITUDE_VALUE, LANGITUDE_VALUE;
+    // private static double LATITUDE_VALUE, LANGITUDE_VALUE;
     private double LATITUDE_VALUE, LANGITUDE_VALUE;
-   // static String addressid="";
+    // static String addressid="";
     GlobalShare globalShare;
-    public static int calval=0;
+    public static int calval = 0;
     public static Context mmContext;
     public static Activity mainfinish;
-    public static String FROMVAL="";
+    public static String FROMVAL = "";
     private Dialog alertDialog;
     private View layout;
     private Spinner credits_spinner;
@@ -68,15 +71,15 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
     private Button cheqpopup_submit;
     CheckBox checkbox;
     ArrayList<String> creditDatesList = new ArrayList<>();
-    String CREDIT_DAYS="";
+    String CREDIT_DAYS = "";
     Spinner transport_spinner;
     private Dialog chequealertDialog;
     private View chequelayout;
-    private String DEALERIDVAL="";
+    private String DEALERIDVAL = "";
     private String BRANCHID;
-    static  EditText chequdateeedittext;
-    private String TRANSPORT_ID="";
-    private String TRANSPORT_NAME="";
+    static EditText chequdateeedittext;
+    private String TRANSPORT_ID = "";
+    private String TRANSPORT_NAME = "";
     ArrayList<String> transportNamesList = new ArrayList<>();
     ArrayList<String> transportIDsList = new ArrayList<>();
     EditText remarkstxt;
@@ -84,10 +87,10 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext=this;
-        mmContext=this;
-        mainfinish=this;
-        globalShare=(GlobalShare)getApplicationContext();
+        mContext = this;
+        mmContext = this;
+        mainfinish = this;
+        globalShare = (GlobalShare) getApplicationContext();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_user_payment);
 
@@ -98,20 +101,20 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
 
         ImageView backimg = (ImageView) actionView.findViewById(R.id.backimg);
         backimg.setOnClickListener(UserPaymentActivity.this);
-        codbtn=findViewById(R.id.codbtn);
+        codbtn = findViewById(R.id.codbtn);
         codbtn.setOnClickListener(UserPaymentActivity.this);
-        paytmbtn=findViewById(R.id.paytmbtn);
+        paytmbtn = findViewById(R.id.paytmbtn);
         paytmbtn.setOnClickListener(UserPaymentActivity.this);
 
-        remarkstxt=findViewById(R.id.remarkstxt);
-        transport_spinner=findViewById(R.id.transport_spinner);
-        chequebtn=findViewById(R.id.chequebtn);
+        remarkstxt = findViewById(R.id.remarkstxt);
+        transport_spinner = findViewById(R.id.transport_spinner);
+        chequebtn = findViewById(R.id.chequebtn);
         chequebtn.setOnClickListener(UserPaymentActivity.this);
 
-       // addressid = getIntent().getStringExtra("addressid");
+        // addressid = getIntent().getStringExtra("addressid");
 
-        Bundle bundle=getIntent().getExtras();
-        DEALERIDVAL=bundle.getString("dealer_id");
+        Bundle bundle = getIntent().getExtras();
+        DEALERIDVAL = bundle.getString("dealer_id");
 
         if (SharedDB.isLoggedIn(getApplicationContext())) {
             values = SharedDB.getUserDetails(getApplicationContext());
@@ -127,11 +130,10 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
             LANGITUDE_VALUE = Double.parseDouble(LNG);
             LATITUDE_VALUE = Double.parseDouble(LAT);
         }
-        if(SHORTFORM.equals("SE"))
-        {
+        if (SHORTFORM.equals("SE")) {
             chequebtn.setVisibility(View.VISIBLE);
             paytmbtn.setVisibility(View.GONE);
-        }else{
+        } else {
             chequebtn.setVisibility(View.GONE);
             paytmbtn.setVisibility(View.VISIBLE);
         }
@@ -158,6 +160,7 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
                     TRANSPORT_ID = "0";
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
@@ -167,30 +170,28 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.backimg:
                 finish();
-                if(CartListActivity.mainfinish!=null)
-                {
+                if (CartListActivity.mainfinish != null) {
                     CartListActivity.mainfinish.finish();
                 }
-                Intent intent=new Intent(getApplicationContext(),CartListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CartListActivity.class);
                 startActivity(intent);
                 break;
             case R.id.paytmbtn:
-              //  FROMVAL="netbanking";
-              //  checkoutCart("","","",LATITUDE_VALUE,LANGITUDE_VALUE,"");
+                //  FROMVAL="netbanking";
+                //  checkoutCart("","","",LATITUDE_VALUE,LANGITUDE_VALUE,"");
                 break;
             case R.id.codbtn:
-                FROMVAL="credit";
+                FROMVAL = "credit";
                 showCreditPopup();
-         /*Date Picker active with next 90 days from current date*/
+                /*Date Picker active with next 90 days from current date*/
          /*       DialogFragment fromfragment = new DatePickerFragment();
                 fromfragment.show(getSupportFragmentManager(), "Date Picker");*/
                 break;
             case R.id.chequebtn:
-                FROMVAL="cheque";
+                FROMVAL = "cheque";
                 showCreditPopup();
                 break;
             default:
@@ -223,15 +224,15 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
         });
         credits_spinner = layout.findViewById(R.id.credits_spinner);
         checkbox = layout.findViewById(R.id.checkbox);
-        LinearLayout chequelinear=layout.findViewById(R.id.chequelinear);
-        final EditText chequeedittext=layout.findViewById(R.id.chequeedittext);
+        LinearLayout chequelinear = layout.findViewById(R.id.chequelinear);
+        final EditText chequeedittext = layout.findViewById(R.id.chequeedittext);
 
-        LinearLayout chequedatelinear=layout.findViewById(R.id.chequedatelinear);
-        LinearLayout creditlnr=layout.findViewById(R.id.creditlnr);
+        LinearLayout chequedatelinear = layout.findViewById(R.id.chequedatelinear);
+        LinearLayout creditlnr = layout.findViewById(R.id.creditlnr);
 
-        chequdateeedittext=layout.findViewById(R.id.chequdateeedittext);
-        TextView termsandconditiontxt=layout.findViewById(R.id.termsandconditiontxt);
-        TextView titletxt=layout.findViewById(R.id.titletxt);
+        chequdateeedittext = layout.findViewById(R.id.chequdateeedittext);
+        TextView termsandconditiontxt = layout.findViewById(R.id.termsandconditiontxt);
+        TextView titletxt = layout.findViewById(R.id.titletxt);
 
 //        termsandconditiontxt.setText(Html.fromHtml("I agree to the " +
 //                "<a href='com.nova.b2b_dealer.TermsandConditionsActivity'>TERMS AND CONDITIONS</a>"));
@@ -239,16 +240,14 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
 //        termsandconditiontxt.setMovementMethod(LinkMovementMethod.getInstance());
 
         termsandconditiontxt.setText(R.string.agreetermsconditions);
-        if(SHORTFORM.equals("SE"))
-        {
-            if(FROMVAL.equals("cheque"))
-            {
+        if (SHORTFORM.equals("SE")) {
+            if (FROMVAL.equals("cheque")) {
                 titletxt.setText("Enter cheque details");
                 chequelinear.setVisibility(View.VISIBLE);
                 chequedatelinear.setVisibility(View.VISIBLE);
                 credits_spinner.setVisibility(View.GONE);
                 creditlnr.setVisibility(View.GONE);
-            }else{
+            } else {
                 creditlnr.setVisibility(View.VISIBLE);
                 checkbox.setVisibility(View.VISIBLE);
                 termsandconditiontxt.setVisibility(View.VISIBLE);
@@ -258,7 +257,7 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
                 credits_spinner.setVisibility(View.VISIBLE);
                 loadCredits();
             }
-        }else {
+        } else {
             chequelinear.setVisibility(View.GONE);
             chequedatelinear.setVisibility(View.GONE);
             credits_spinner.setVisibility(View.VISIBLE);
@@ -271,7 +270,7 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
         termsandconditiontxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),TermsandConditionsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TermsandConditionsActivity.class);
                 startActivity(intent);
             }
         });
@@ -290,47 +289,44 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
             }
         });
 
-        popup_submit=(Button)layout.findViewById(R.id.popup_submit);
+        popup_submit = (Button) layout.findViewById(R.id.popup_submit);
         popup_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(SHORTFORM.equals("SE"))
-                {
-                    if(FROMVAL.equals("cheque")) {
+                if (SHORTFORM.equals("SE")) {
+                    if (FROMVAL.equals("cheque")) {
                         String chequeno = chequeedittext.getText().toString().trim();
                         String cheque_dateval = chequdateeedittext.getText().toString().trim();
-                        if (chequeno == null || "".equalsIgnoreCase(chequeno)|| chequeno.equals("")
-                            || cheque_dateval == null || "".equalsIgnoreCase(cheque_dateval)|| cheque_dateval.equals("")    ) {
+                        if (chequeno == null || "".equalsIgnoreCase(chequeno) || chequeno.equals("")
+                                || cheque_dateval == null || "".equalsIgnoreCase(cheque_dateval) || cheque_dateval.equals("")) {
                             Toast.makeText(getApplicationContext(),
                                     "Please enter cheque number and cheque date", Toast.LENGTH_SHORT).show();
                         } else {
-                            checkoutCart("", "", "", LATITUDE_VALUE, LANGITUDE_VALUE,cheque_dateval,chequeno);
+                            checkoutCart("", "", "", LATITUDE_VALUE, LANGITUDE_VALUE, cheque_dateval, chequeno);
                         }
-                    }else{
+                    } else {
                         if (CREDIT_DAYS == null || "".equalsIgnoreCase(CREDIT_DAYS)
                                 || CREDIT_DAYS.equals("")) {
                             Toast.makeText(getApplicationContext(),
                                     "Please select credit", Toast.LENGTH_SHORT).show();
                         } else {
-                            if(checkbox.isChecked())
-                            {
-                                checkoutCart("","","",LATITUDE_VALUE,LANGITUDE_VALUE,CREDIT_DAYS,"");
-                            }else{
-                                Toast.makeText(getApplicationContext(),"Please check Terms and Tonditions",Toast.LENGTH_SHORT).show();
+                            if (checkbox.isChecked()) {
+                                checkoutCart("", "", "", LATITUDE_VALUE, LANGITUDE_VALUE, CREDIT_DAYS, "");
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Please check Terms and Tonditions", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
-                }else{
+                } else {
                     if (CREDIT_DAYS == null || "".equalsIgnoreCase(CREDIT_DAYS)
                             || CREDIT_DAYS.equals("")) {
                         Toast.makeText(getApplicationContext(),
                                 "Please select credit", Toast.LENGTH_SHORT).show();
                     } else {
-                        if(checkbox.isChecked())
-                        {
-                            checkoutCart("","","",LATITUDE_VALUE,LANGITUDE_VALUE,CREDIT_DAYS,"");
-                        }else{
-                            Toast.makeText(getApplicationContext(),"Please check terms and conditions",Toast.LENGTH_SHORT).show();
+                        if (checkbox.isChecked()) {
+                            checkoutCart("", "", "", LATITUDE_VALUE, LANGITUDE_VALUE, CREDIT_DAYS, "");
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Please check terms and conditions", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -358,7 +354,7 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 // TODO Auto-generated method stub
-               CREDIT_DAYS=creditDatesList.get(position);
+                CREDIT_DAYS = creditDatesList.get(position);
             }
 
             @Override
@@ -368,16 +364,16 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
-    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener{
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
         @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState){
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH);
             int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-            DatePickerDialog dpd=new DatePickerDialog(getActivity(), this, year, month, day);
+            DatePickerDialog dpd = new DatePickerDialog(getActivity(), this, year, month, day);
 //            /*
 //                add(int field, int value)
 //                    Adds the given amount to a Calendar field.
@@ -409,12 +405,12 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
             // Set the Calendar new date as minimum date of date picker
             dpd.getDatePicker().setMinDate(calendar.getTimeInMillis());
 
-          return  dpd;
+            return dpd;
         }
 
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth){
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             // Do something with the chosen date
-         //   TextView tv = (TextView) getActivity().findViewById(R.id.tv);
+            //   TextView tv = (TextView) getActivity().findViewById(R.id.tv);
 
             // Create a Date variable/object with user chosen date
 
@@ -509,59 +505,52 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
 //    }
 
     public void checkoutCart(String address, String flat_no, String landmark, double latitude,
-                                     double longitude,String creditdate,String chequenumber) {
+                             double longitude, String creditdate, String chequenumber) {
         final TransparentProgressDialog dialog = new TransparentProgressDialog(mContext);
         dialog.show();
         RetrofitAPI mApiService = SharedDB.getInterfaceService();
         String lat = String.valueOf(latitude);
         String lon = String.valueOf(longitude);
-        String REMARKS_VAL=remarkstxt.getText().toString().trim();
+        String REMARKS_VAL = remarkstxt.getText().toString().trim();
 
         Call<Checkout> mService = mApiService.checkoutCart(PRIMARYID,
                 ADDRESSIDVAL, "", "", "", "",
-                FROMVAL,creditdate,DEALERIDVAL,BRANCHID,chequenumber,TRANSPORT_ID,REMARKS_VAL);
+                FROMVAL, creditdate, DEALERIDVAL, BRANCHID, chequenumber, TRANSPORT_ID, REMARKS_VAL);
         mService.enqueue(new Callback<Checkout>() {
             @Override
             public void onResponse(@NonNull Call<Checkout> call, @NonNull Response<Checkout> response) {
                 dialog.dismiss();
                 try {
-                    Log.e("response",""+response);
+                    Log.e("response", "" + response);
                     Checkout mcheckoutObject = response.body();
                     assert mcheckoutObject != null;
                     String status = mcheckoutObject.getStatus();
-                    String message=mcheckoutObject.getMessage();
+                    String message = mcheckoutObject.getMessage();
                     String orderId = mcheckoutObject.getOrder_id();
                     String order_key = mcheckoutObject.getOrder_key();
 
                     if (status.equals("1")) {
                         List<OrdersListDTO> orderListDTOS = mcheckoutObject.getOrdersListDTOList();
-                        if(orderListDTOS!=null)
-                        {
-                            if(orderListDTOS.size()>0)
-                            {
-                                ArrayList<HashMap<String,String>> hashMapArrayList=new ArrayList<>();
-                                ArrayList<String> order_idList=new ArrayList<>();
-                                ArrayList<String> order_keyList=new ArrayList<>();
-                                for(int i=0;i<orderListDTOS.size();i++)
-                                {
-                                    HashMap<String,String> hashMap=new HashMap<String,String>();
-                                    String order_id=orderListDTOS.get(i).getOrder_id();
-                                    String order_key1=orderListDTOS.get(i).getOrder_key();
+                        if (orderListDTOS != null) {
+                            if (orderListDTOS.size() > 0) {
+                                ArrayList<HashMap<String, String>> hashMapArrayList = new ArrayList<>();
+                                ArrayList<String> order_idList = new ArrayList<>();
+                                ArrayList<String> order_keyList = new ArrayList<>();
+                                for (int i = 0; i < orderListDTOS.size(); i++) {
+                                    HashMap<String, String> hashMap = new HashMap<String, String>();
+                                    String order_id = orderListDTOS.get(i).getOrder_id();
+                                    String order_key1 = orderListDTOS.get(i).getOrder_key();
                                     order_idList.add(order_id);
                                     order_keyList.add(order_key1);
 
-                                    hashMap.put("invoice_key",order_key1);
-                                    hashMap.put("invoice_id",order_id);
+                                    hashMap.put("invoice_key", order_key1);
+                                    hashMap.put("invoice_id", order_id);
                                     hashMapArrayList.add(hashMap);
                                 }
-                                if(order_idList!=null)
-                                {
-                                    if(order_idList.size()>0)
-                                    {
-                                        if(order_idList.size()==1)
-                                        {
-                                            if(SHORTFORM.equals("SE"))
-                                            {
+                                if (order_idList != null) {
+                                    if (order_idList.size() > 0) {
+                                        if (order_idList.size() == 1) {
+                                            if (SHORTFORM.equals("SE")) {
                                                 SharedPreferences dealerpreferences = getSharedPreferences(
                                                         SharedDB.DEALERPREFERENCES, Context.MODE_PRIVATE);
                                                 SharedPreferences.Editor dealereditor = dealerpreferences.edit();
@@ -570,42 +559,38 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
                                                 SharedDB.dealerclearAuthentication(UserPaymentActivity.this);
                                             }
 
-                                            if(alertDialog!=null)
-                                            {
+                                            if (alertDialog != null) {
                                                 alertDialog.dismiss();
                                             }
 
-                                            if(ProductCategoriesActivity.mainfinish!=null)
-                                            {
+                                            if (ProductCategoriesActivity.mainfinish != null) {
                                                 ProductCategoriesActivity.mainfinish.finish();
                                             }
 
-                                            if(ProductListActivity.mainfinish!=null)
-                                            {
+                                            if (ProductListActivity.mainfinish != null) {
                                                 ProductListActivity.mainfinish.finish();
                                             }
-                                            if(CartListActivity.mainfinish!=null)
-                                            {
+                                            if (CartListActivity.mainfinish != null) {
                                                 CartListActivity.mainfinish.finish();
                                             }
-                                            if(DealerMenuScreenActivity.mainfinish!=null)
-                                            {
+                                            if (DealerMenuScreenActivity.mainfinish != null) {
                                                 DealerMenuScreenActivity.mainfinish.finish();
                                             }
+                                            if (DealerScreenActivity.mainfinish != null) {
+                                                DealerScreenActivity.mainfinish.finish();
+                                            }
 
-                                            if(ProductListActivityNew.mainfinish!=null)
-                                            {
+                                            if (ProductListActivityNew.mainfinish != null) {
                                                 ProductListActivityNew.mainfinish.finish();
                                             }
 
                                             globalShare.setInvoicesList(hashMapArrayList);
                                             Intent intent = new Intent(mmContext, OrderSummaryActivity.class);
-                                            intent.putExtra("orderId",order_idList.get(0));
-                                            intent.putExtra("order_key",order_keyList.get(0));
+                                            intent.putExtra("orderId", order_idList.get(0));
+                                            intent.putExtra("order_key", order_keyList.get(0));
                                             mmContext.startActivity(intent);
-                                        }else{
-                                            if(SHORTFORM.equals("SE"))
-                                            {
+                                        } else {
+                                            if (SHORTFORM.equals("SE")) {
                                                 SharedPreferences dealerpreferences = getSharedPreferences(
                                                         SharedDB.DEALERPREFERENCES, Context.MODE_PRIVATE);
                                                 SharedPreferences.Editor dealereditor = dealerpreferences.edit();
@@ -614,31 +599,28 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
                                                 SharedDB.dealerclearAuthentication(UserPaymentActivity.this);
                                             }
 
-                                            if(alertDialog!=null)
-                                            {
+                                            if (alertDialog != null) {
                                                 alertDialog.dismiss();
                                             }
 
-                                            if(ProductCategoriesActivity.mainfinish!=null)
-                                            {
+                                            if (ProductCategoriesActivity.mainfinish != null) {
                                                 ProductCategoriesActivity.mainfinish.finish();
                                             }
 
-                                            if(ProductListActivity.mainfinish!=null)
-                                            {
+                                            if (ProductListActivity.mainfinish != null) {
                                                 ProductListActivity.mainfinish.finish();
                                             }
-                                            if(CartListActivity.mainfinish!=null)
-                                            {
+                                            if (CartListActivity.mainfinish != null) {
                                                 CartListActivity.mainfinish.finish();
                                             }
-                                            if(DealerMenuScreenActivity.mainfinish!=null)
-                                            {
+                                            if (DealerMenuScreenActivity.mainfinish != null) {
                                                 DealerMenuScreenActivity.mainfinish.finish();
                                             }
+                                            if (DealerScreenActivity.mainfinish != null) {
+                                                DealerScreenActivity.mainfinish.finish();
+                                            }
 
-                                            if(ProductListActivityNew.mainfinish!=null)
-                                            {
+                                            if (ProductListActivityNew.mainfinish != null) {
                                                 ProductListActivityNew.mainfinish.finish();
                                             }
                                             //  globalShare.setStoreMenuSelectedPos("3");
@@ -658,6 +640,7 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
 
                 }
             }
+
             @Override
             public void onFailure(Call<Checkout> call, Throwable t) {
                 call.cancel();
@@ -666,15 +649,15 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
             }
         });
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        if(CartListActivity.mainfinish!=null)
-        {
+        if (CartListActivity.mainfinish != null) {
             CartListActivity.mainfinish.finish();
         }
-        Intent intent=new Intent(getApplicationContext(),CartListActivity.class);
+        Intent intent = new Intent(getApplicationContext(), CartListActivity.class);
         startActivity(intent);
     }
 
@@ -752,6 +735,7 @@ public class UserPaymentActivity extends AppCompatActivity implements View.OnCli
                     TRANSPORT_NAME = transport_NamesList.get(position);
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub

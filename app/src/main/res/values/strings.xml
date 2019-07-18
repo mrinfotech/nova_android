@@ -11,6 +11,7 @@
         <item>@string/nav_item_deals</item>
         <item>@string/nav_item_products</item>
         <item>@string/nav_item_orders</item>
+        <item>Bank Information</item>
         <item>@string/receivedorders</item>
         <item>@string/nav_item_trackorder</item>
         <item>@string/invoice</item>

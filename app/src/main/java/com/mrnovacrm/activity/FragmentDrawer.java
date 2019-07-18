@@ -32,6 +32,7 @@ import com.mrnovacrm.adapter.NavigationDrawerAdapter;
 import com.mrnovacrm.adapter.SpinnerItemsAdapternew;
 import com.mrnovacrm.b2b_admin.AdminMenuScreenActivity;
 import com.mrnovacrm.b2b_dealer.DealerMenuScreenActivity;
+import com.mrnovacrm.b2b_dealer.DealerScreenActivity;
 import com.mrnovacrm.b2b_delivery_dept.DeliveryMenuScreenActivity;
 import com.mrnovacrm.b2b_dispatch_dept.DispatchMenuScreenActivity;
 import com.mrnovacrm.b2b_finance_dept.FinanceDeptMenuScreenActivity;
@@ -73,6 +74,7 @@ public class FragmentDrawer extends Fragment {
     int[] menuicons = {R.drawable.menu_profile,
             R.drawable.menu_home,
             R.drawable.menu_products,
+            R.drawable.menu_orders,
             R.drawable.menu_orders,
             R.drawable.menu_receivedorders,
             R.drawable.menu_trackorders,
@@ -545,6 +547,10 @@ public class FragmentDrawer extends Fragment {
                     {
                         DealerMenuScreenActivity.mainfinish.finish();
                     }
+                    if(DealerScreenActivity.mainfinish!=null)
+                    {
+                        DealerScreenActivity.mainfinish.finish();
+                    }
                     if(FinanceDeptMenuScreenActivity.mainfinish!=null)
                     {
                         FinanceDeptMenuScreenActivity.mainfinish.finish();
@@ -595,7 +601,7 @@ public class FragmentDrawer extends Fragment {
                             globalShare.setDealerMenuSelectedPos("1");
 
                             Intent intent = new Intent(getActivity(),
-                                    DealerMenuScreenActivity.class);
+                                    DealerScreenActivity.class);
                             startActivity(intent);
                         } else if (short_form.equals("SA")) {
                             globalShare.setSuperadminmenuselectpos("1");

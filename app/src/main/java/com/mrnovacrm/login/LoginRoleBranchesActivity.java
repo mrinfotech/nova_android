@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.mrnovacrm.R;
 import com.mrnovacrm.b2b_admin.AdminMenuScreenActivity;
 import com.mrnovacrm.b2b_dealer.DealerMenuScreenActivity;
+import com.mrnovacrm.b2b_dealer.DealerScreenActivity;
 import com.mrnovacrm.b2b_delivery_dept.DeliveryMenuScreenActivity;
 import com.mrnovacrm.b2b_dispatch_dept.DispatchMenuScreenActivity;
 import com.mrnovacrm.b2b_finance_dept.FinanceDeptMenuScreenActivity;
@@ -272,7 +273,7 @@ public class LoginRoleBranchesActivity extends AppCompatActivity{
                 } else if (short_form.equals("DEALER")) {
                     globalShare.setDealerMenuSelectedPos("1");
                     Intent intent = new Intent(getApplicationContext(),
-                            DealerMenuScreenActivity.class);
+                            DealerScreenActivity.class);
                     startActivity(intent);
                 } else if (short_form.equals("SA")) {
                     globalShare.setSuperadminmenuselectpos("1");

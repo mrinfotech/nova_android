@@ -728,6 +728,7 @@ public class DealersDataActivity extends AppCompatActivity {
                             SharedDB.dealerSahred(getApplicationContext(), sellerid,name,mobile);
 
                             DealerMenuScreenActivity.updateCartCountNotification(itemscount);
+                            DealerScreenActivity.updateCartCountNotification(itemscount);
                             ProductListActivity.updateCartCountNotification(itemscount);
                             ProductListActivityNew.updateCartCountNotification(itemscount);
                             ProductCategoriesActivity.updateCartCountNotification(itemscount);

@@ -328,6 +328,9 @@
             android:name=".b2b_dealer.EditDiscountRequestActivity"
             android:screenOrientation="portrait" />
 
+        <activity android:name=".b2b_dealer.DealerScreenActivity"
+            android:screenOrientation="portrait" />
+
 
         <!-- Firebase Notifications -->
         <service android:name=".firebaseservice.MyFirebaseMessagingService">

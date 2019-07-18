@@ -1,5 +1,6 @@
 package com.mrnovacrm.constants;
 
+import com.mrnovacrm.model.BankAccountRequestDTO;
 import com.mrnovacrm.model.BranchesDTO;
 import com.mrnovacrm.model.CategoryDTO;
 import com.mrnovacrm.model.Checkout;
@@ -248,6 +249,9 @@ public interface RetrofitAPI {
     @GET("discounts/requests")
     Call<DiscountRquestDTO> getDiscountsRequest(@Query("user") String user);
 
+
+    @GET("payments/accDetails")
+    Call<BankAccountRequestDTO> getAccountDetails(@Query("user") String user);
 
 
     @GET("categories")

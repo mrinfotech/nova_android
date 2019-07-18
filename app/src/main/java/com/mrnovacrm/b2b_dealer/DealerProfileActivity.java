@@ -98,16 +98,16 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
     private String selectedPath1;
     private Bitmap selectedImageBitmap;
 
-    TextView profilenametxt,countrytxt, statetxt, towncitytxt, pincodetxt,
-            banknametxt, accountnumbertxt, ifsccodetxt,key_persontxt;
+    TextView profilenametxt, countrytxt, statetxt, towncitytxt, pincodetxt,
+            banknametxt, accountnumbertxt, ifsccodetxt, key_persontxt;
 
-    TextView pannumbertxt,dealernametxt,dno_txt,streetname_txt,landmark_txt,dist_txt,branch_txt,marketingofficername_txt,marketingofficercontact_txt,
-            marketingofficeremail_txt,marketingheadquaterame_txt,dealercontactnumbertxt,dealerwhatappnumbertxt,
-            dealeralternativecontatctnumbertxt,dealeremail_txt,backbranch_txt,depositamount_txt,depositdate_txt,
-            fertilizerslicense_txt,fertilizerslicensevalidupto_txt,pesticideslicense_txt,
-            otherlicense_txt,seedlicensevalidupto_txt,seedlicense_txt,
-            pesticideslicensevalidupto_txt,ownername_txt,ownerdesignation_txt,
-            ownercontactnumber_txt,keypersoncotact_txt,
+    TextView pannumbertxt, dealernametxt, dno_txt, streetname_txt, landmark_txt, dist_txt, branch_txt, marketingofficername_txt, marketingofficercontact_txt,
+            marketingofficeremail_txt, marketingheadquaterame_txt, dealercontactnumbertxt, dealerwhatappnumbertxt,
+            dealeralternativecontatctnumbertxt, dealeremail_txt, backbranch_txt, depositamount_txt, depositdate_txt,
+            fertilizerslicense_txt, fertilizerslicensevalidupto_txt, pesticideslicense_txt,
+            otherlicense_txt, seedlicensevalidupto_txt, seedlicense_txt,
+            pesticideslicensevalidupto_txt, ownername_txt, ownerdesignation_txt,
+            ownercontactnumber_txt, keypersoncotact_txt,
             key_persondesignationtxt;
 
     LinearLayout editlinear;
@@ -115,7 +115,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
     public static Activity mainfinish;
     private TransparentProgressDialog dialog;
     private TextView gsttxt;
-    String BRANCHID,BRANCHNAME;
+    String BRANCHID, BRANCHNAME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,7 +127,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
         View includedLayout = findViewById(R.id.include_actionbar);
         ImageView backimg = includedLayout.findViewById(R.id.backimg);
         backimg.setOnClickListener(DealerProfileActivity.this);
-        mainfinish=this;
+        mainfinish = this;
 
 
         editlinear = findViewById(R.id.editlinear);
@@ -218,11 +218,10 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
 
         boolean isConnectedToInternet = CheckNetWork
                 .isConnectedToInternet(getApplicationContext());
-        if(isConnectedToInternet)
-        {
+        if (isConnectedToInternet) {
             getEMPListDetails();
-        }else {
-            Toast.makeText(getApplicationContext(),R.string.networkerror,Toast.LENGTH_SHORT);
+        } else {
+            Toast.makeText(getApplicationContext(), R.string.networkerror, Toast.LENGTH_SHORT);
         }
         editlinear.setOnClickListener(DealerProfileActivity.this);
     }
@@ -237,10 +236,10 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                 recallMethod();
                 break;
             case R.id.editlinear:
-                if(SHORTFORM.equals("DEALER")) {
+                if (SHORTFORM.equals("DEALER")) {
                     Intent intent = new Intent(getApplicationContext(), UpdateProfileActivity.class);
                     startActivity(intent);
-                }else{
+                } else {
                     Intent intent = new Intent(getApplicationContext(), UpdateEmployeeProfileActivity.class);
                     startActivity(intent);
                 }
@@ -269,11 +268,9 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
 
                     if (Integer.parseInt(status) == 1) {
                         List<EmpDetailsDTO> empDetailsDTOS = mOrderObject.getEmpDetailsDTOS();
-                        if(SHORTFORM.equals("DEALER"))
-                        {
+                        if (SHORTFORM.equals("DEALER")) {
                             List<ContactsModelDTO> contactsModelDTOS = mOrderObject.getContactsModelDTOList();
-                            if(contactsModelDTOS!=null)
-                            {
+                            if (contactsModelDTOS != null) {
                                 if (contactsModelDTOS.size() > 0) {
                                     globalShare.setContactsModelDTOS(contactsModelDTOS);
 
@@ -358,7 +355,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                                     String district = empDetailsDTOS.get(i).getDistrict();
                                     String company_name1 = empDetailsDTOS.get(i).getCompany_name();
                                     String contact1 = empDetailsDTOS.get(i).getContact1();
-                                    String contact2= empDetailsDTOS.get(i).getContact2();
+                                    String contact2 = empDetailsDTOS.get(i).getContact2();
                                     String whatsapp = empDetailsDTOS.get(i).getWhatsapp();
 
                                     String marketing_name = empDetailsDTOS.get(i).getMarketing_name();
@@ -425,7 +422,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
             public void onFailure(Call<Login> call, Throwable t) {
                 call.cancel();
                 dialog.dismiss();
-               // Toast.makeText(getApplicationContext(), R.string.server_error, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getApplicationContext(), R.string.server_error, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -441,7 +438,15 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
         if (DealerMenuScreenActivity.mainfinish != null) {
             DealerMenuScreenActivity.mainfinish.finish();
         }
-        if (SHORTFORM.equals("DEALER") || SHORTFORM.equals("SE")) {
+        if (DealerScreenActivity.mainfinish != null) {
+            DealerScreenActivity.mainfinish.finish();
+        }
+        if (SHORTFORM.equals("DEALER")) {
+            globalShare.setDeliverymenuselectpos("1");
+            Intent intent = new Intent(getApplicationContext(), DealerScreenActivity.class);
+            startActivity(intent);
+        }
+        if (SHORTFORM.equals("SE")) {
             globalShare.setDeliverymenuselectpos("1");
             Intent intent = new Intent(getApplicationContext(), DealerMenuScreenActivity.class);
             startActivity(intent);
@@ -584,8 +589,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                     updateProfileimage();
                 }
             }
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
     }
@@ -609,12 +613,10 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                     cursor.close();
                 }
             }
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
         }
         return path;
     }
-
 
 
     public static Bitmap decodeSampledBitmapFromFile(String path, int reqWidth,
@@ -803,7 +805,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
 
                         SharedDB.loginSahred(getApplicationContext(), MOBILE, DELIVERY_ADDRESS, USERTYPE, "",
                                 "", 0.0, 0.0, PRIMARYID, PINCODE, USERNAME, dp, ADDRESSID, BRANCHID,
-                                BRANCHNAME, SHORTFORM, COMPANY, BRANCHCONTACT,COMPANIESLIST,BRANCHCOUNT,ROLECOUNT,ROLEPKEY);
+                                BRANCHNAME, SHORTFORM, COMPANY, BRANCHCONTACT, COMPANIESLIST, BRANCHCOUNT, ROLECOUNT, ROLEPKEY);
                     } else {
                         // Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
                     }
@@ -820,8 +822,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
         });
     }
 
-    public void updateProfileimage()
-    {
+    public void updateProfileimage() {
         dialog = new TransparentProgressDialog(DealerProfileActivity.this);
         dialog.show();
         new Thread(new Runnable() {
@@ -835,8 +836,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                         @Override
                         public void run() {
                             Toast.makeText(getApplicationContext(), "Insufficient Memory!", Toast.LENGTH_SHORT).show();
-                            if( dialog!=null)
-                            {
+                            if (dialog != null) {
                                 dialog.dismiss();
                             }
                         }
@@ -859,7 +859,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
         byte[] buffer;
         int maxBufferSize = 1 * 1024 * 1024;
 
-        Log.e("selectedPath1",selectedPath1);
+        Log.e("selectedPath1", selectedPath1);
 
         File selectedFile = new File(selectedPath1);
         String[] parts = selectedPath1.split("/");
@@ -876,7 +876,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
         } else {
             try {
                 FileInputStream fileInputStream = new FileInputStream(selectedFile);
-                URL url = new URL(SharedDB.URL+"master/dp");
+                URL url = new URL(SharedDB.URL + "master/dp");
                 connection = (HttpURLConnection) url.openConnection();
                 connection.setDoInput(true);//Allow Inputs
                 connection.setDoOutput(true);//Allow Outputs
@@ -983,7 +983,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                                     Toast.makeText(getApplicationContext(), messageValue, Toast.LENGTH_SHORT).show();
                                     String dp = res_object.getString("dp");
 
-                                    Log.e("dp",dp);
+                                    Log.e("dp", dp);
 
                                     String ADDRESSID = values.get(SharedDB.ADDRESSID);
                                     USERTYPE = values.get(SharedDB.USERTYPE);
@@ -1005,8 +1005,8 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
 
                                     SharedDB.loginSahred(getApplicationContext(), MOBILE, DELIVERY_ADDRESS, USERTYPE, "",
                                             "", Double.parseDouble(LATITUDE), Double.parseDouble(LONGITIDE), PRIMARYID, PINCODE, USERNAME, dp, ADDRESSID, BRANCHID,
-                                            BRANCHNAME, SHORTFORM, COMPANY, BRANCHCONTACT,COMPANIESLIST,
-                                            BRANCHCOUNT,ROLECOUNT,ROLEPKEY);
+                                            BRANCHNAME, SHORTFORM, COMPANY, BRANCHCONTACT, COMPANIESLIST,
+                                            BRANCHCOUNT, ROLECOUNT, ROLEPKEY);
                                 } else {
                                     Toast.makeText(getApplicationContext(), messageValue, Toast.LENGTH_SHORT).show();
                                 }
@@ -1048,8 +1048,7 @@ public class DealerProfileActivity extends AppCompatActivity implements View.OnC
                     }
                 });
             }
-            if(dialog!=null)
-            {
+            if (dialog != null) {
                 dialog.dismiss();
             }
             return serverResponseCode;

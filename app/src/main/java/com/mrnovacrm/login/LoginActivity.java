@@ -22,9 +22,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.mrnovacrm.R;
 import com.mrnovacrm.b2b_admin.AdminMenuScreenActivity;
 import com.mrnovacrm.b2b_dealer.DealerMenuScreenActivity;
+import com.mrnovacrm.b2b_dealer.DealerScreenActivity;
 import com.mrnovacrm.b2b_delivery_dept.DeliveryMenuScreenActivity;
 import com.mrnovacrm.b2b_dispatch_dept.DispatchMenuScreenActivity;
 import com.mrnovacrm.b2b_finance_dept.FinanceDeptMenuScreenActivity;
@@ -37,10 +39,13 @@ import com.mrnovacrm.db.SharedDB;
 import com.mrnovacrm.model.ContactsModelDTO;
 import com.mrnovacrm.model.Login;
 import com.mrnovacrm.model.RolesModelDTO;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 /**
  * Created by android on 27-02-2018.
  */
@@ -89,12 +94,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         passwordtxt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                try{
+                try {
                     if (actionId == EditorInfo.IME_ACTION_DONE) {
                         showValidation();
                     }
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                 }
                 return false;
             }
@@ -141,8 +145,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void showValidation()
-    {
+    public void showValidation() {
         userName = mobilenumbertxt.getText().toString();
         password = passwordtxt.getText().toString();
         if (userName.equals("") && password.equals("")) {
@@ -201,23 +204,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         String branch_count = mLoginObject.getBranch_count();
                         String role_count = mLoginObject.getRole_count();
-                        try{
-                            List<ContactsModelDTO> companiesDTOList=mLoginObject.getCompaniesDTOList();
-                            int companieslistsize=0;
-                            if(companiesDTOList!=null)
-                            {
-                                if(companiesDTOList.size()>0)
-                                {
-                                    companieslistsize=companiesDTOList.size();
+                        try {
+                            List<ContactsModelDTO> companiesDTOList = mLoginObject.getCompaniesDTOList();
+                            int companieslistsize = 0;
+                            if (companiesDTOList != null) {
+                                if (companiesDTOList.size() > 0) {
+                                    companieslistsize = companiesDTOList.size();
                                     globalShare.setCompaniesList(companiesDTOList);
                                 }
-                            }else{
+                            } else {
                                 globalShare.setCompaniesList(companiesDTOList);
                             }
                             globalShare.setNotificationfrom("login");
 
-                            if(short_form.equals("DEALER"))
-                            {
+                            if (short_form.equals("DEALER")) {
                                 double lat = 0.0;
                                 double lon = 0.0;
                                 try {
@@ -230,8 +230,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 globalShare.setLoginselectedfromval("loginscreen");
                                 SharedDB.loginSahred(getApplicationContext(), mobile, address, role, "",
                                         "", lat, lon, primaryId, pincode, userName, imageurl, address_id, branch_id,
-                                        branch_name, short_form,company,branch_contact,String.valueOf(companieslistsize),
-                                        branch_count,role_count,"0");
+                                        branch_name, short_form, company, branch_contact, String.valueOf(companieslistsize),
+                                        branch_count, role_count, "0");
 
                                 if (short_form.equals("ADMIN")) {
                                     globalShare.setAdminmenuselectpos("1");
@@ -261,8 +261,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 } else if (short_form.equals("DEALER")) {
                                     globalShare.setDealerMenuSelectedPos("1");
                                     Intent intent = new Intent(getApplicationContext(),
-                                            DealerMenuScreenActivity.class);
+                                            DealerScreenActivity.class);
                                     startActivity(intent);
+
                                 } else if (short_form.equals("SA")) {
                                     globalShare.setSuperadminmenuselectpos("1");
                                     Intent intent = new Intent(getApplicationContext(),
@@ -270,16 +271,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     startActivity(intent);
                                 }
                                 finish();
-                            }else{
-                                List<RolesModelDTO> rolesDTOList=mLoginObject.getRolesDTOLis();
-                                if(rolesDTOList!=null)
-                                {
-                                    if(rolesDTOList.size()>0)
-                                    {
+                            } else {
+                                List<RolesModelDTO> rolesDTOList = mLoginObject.getRolesDTOLis();
+                                if (rolesDTOList != null) {
+                                    if (rolesDTOList.size() > 0) {
                                         globalShare.setRolesList(rolesDTOList);
-                                        if(rolesDTOList.size()==1)
-                                        {
-                                            String id= rolesDTOList.get(0).getId();
+                                        if (rolesDTOList.size() == 1) {
+                                            String id = rolesDTOList.get(0).getId();
                                             double lat = 0.0;
                                             double lon = 0.0;
                                             try {
@@ -292,8 +290,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                             globalShare.setLoginselectedfromval("loginscreen");
                                             SharedDB.loginSahred(getApplicationContext(), mobile, address, role, "",
                                                     "", lat, lon, primaryId, pincode, userName, imageurl, address_id, branch_id,
-                                                    branch_name, short_form,company,branch_contact,String.valueOf(companieslistsize),
-                                                    branch_count,role_count,id);
+                                                    branch_name, short_form, company, branch_contact, String.valueOf(companieslistsize),
+                                                    branch_count, role_count, id);
 
                                             if (short_form.equals("ADMIN")) {
                                                 globalShare.setAdminmenuselectpos("1");
@@ -323,7 +321,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                             } else if (short_form.equals("DEALER")) {
                                                 globalShare.setDealerMenuSelectedPos("1");
                                                 Intent intent = new Intent(getApplicationContext(),
-                                                        DealerMenuScreenActivity.class);
+                                                        DealerScreenActivity.class);
                                                 startActivity(intent);
                                             } else if (short_form.equals("SA")) {
                                                 globalShare.setSuperadminmenuselectpos("1");
@@ -332,7 +330,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                                 startActivity(intent);
                                             }
                                             finish();
-                                        }else{
+                                        } else {
                                             double lat = 0.0;
                                             double lon = 0.0;
                                             try {
@@ -345,19 +343,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                                             SharedDB.loginSahred(getApplicationContext(), mobile, address, role, "",
                                                     "", lat, lon, primaryId, pincode, userName, imageurl, address_id, branch_id,
-                                                    branch_name, short_form,company,branch_contact,String.valueOf(companieslistsize),
-                                                    branch_count,role_count,"");
+                                                    branch_name, short_form, company, branch_contact, String.valueOf(companieslistsize),
+                                                    branch_count, role_count, "");
 
 
-                                            SharedDB.multiroleSahred(getApplicationContext(), branch_id, branch_name, short_form,company,
-                                                    "","","");
+                                            SharedDB.multiroleSahred(getApplicationContext(), branch_id, branch_name, short_form, company,
+                                                    "", "", "");
 
-                                            Intent intent=new Intent(getApplicationContext(),LoginRoleBranchesActivity.class);
+                                            Intent intent = new Intent(getApplicationContext(), LoginRoleBranchesActivity.class);
                                             startActivity(intent);
                                             finish();
                                         }
                                     }
-                                }else{
+                                } else {
                                     globalShare.setRolesList(rolesDTOList);
 
                                     double lat = 0.0;
@@ -372,8 +370,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     globalShare.setLoginselectedfromval("loginscreen");
                                     SharedDB.loginSahred(getApplicationContext(), mobile, address, role, "",
                                             "", lat, lon, primaryId, pincode, userName, imageurl, address_id, branch_id,
-                                            branch_name, short_form,company,branch_contact,String.valueOf(companieslistsize),
-                                            branch_count,role_count,"0");
+                                            branch_name, short_form, company, branch_contact, String.valueOf(companieslistsize),
+                                            branch_count, role_count, "0");
 
                                     if (short_form.equals("ADMIN")) {
                                         globalShare.setAdminmenuselectpos("1");
@@ -403,7 +401,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     } else if (short_form.equals("DEALER")) {
                                         globalShare.setDealerMenuSelectedPos("1");
                                         Intent intent = new Intent(getApplicationContext(),
-                                                DealerMenuScreenActivity.class);
+                                                DealerScreenActivity.class);
                                         startActivity(intent);
                                     } else if (short_form.equals("SA")) {
                                         globalShare.setSuperadminmenuselectpos("1");
@@ -632,8 +630,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                                }
 //                                finish();
 //                            }
-                        }catch (Exception e)
-                        {
+                        } catch (Exception e) {
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
@@ -641,6 +638,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } catch (Exception e) {
                 }
             }
+
             @Override
             public void onFailure(Call<Login> call, Throwable t) {
                 call.cancel();
@@ -704,7 +702,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onFailure(Call<Login> call, Throwable t) {
                 call.cancel();
                 dialog.dismiss();
-           //     Toast.makeText(LoginActivity.this, R.string.server_error, Toast.LENGTH_SHORT).show();
+                //     Toast.makeText(LoginActivity.this, R.string.server_error, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -713,7 +711,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Check if no view has focus:
         View view = getCurrentFocus();
         if (view != null) {
-            InputMethodManager inputManager = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             inputManager.hideSoftInputFromWindow(view.getWindowToken(),
                     InputMethodManager.HIDE_NOT_ALWAYS);
         }
@@ -729,8 +727,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editor.clear();
             editor.commit();
             SharedDB.clearAuthentication(LoginActivity.this);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
         }
     }
 }

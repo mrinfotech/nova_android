@@ -946,6 +946,7 @@ public class ViewPagerProductsListFragment extends Fragment {
 //                            getProductsList();
                             qtyHashmap = new HashMap<>();
                             DealerMenuScreenActivity.updateCartCountNotification(itemscount);
+                            DealerScreenActivity.updateCartCountNotification(itemscount);
                             ProductListActivity.updateCartCountNotification(itemscount);
                             ProductListActivityNew.updateCartCountNotification(itemscount);
                             ProductCategoriesActivity.updateCartCountNotification(itemscount);

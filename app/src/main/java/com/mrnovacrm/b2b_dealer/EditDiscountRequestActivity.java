@@ -257,7 +257,11 @@ public class EditDiscountRequestActivity extends AppCompatActivity implements Vi
         if (DealerMenuScreenActivity.mainfinish != null) {
             DealerMenuScreenActivity.mainfinish.finish();
         }
-        if (SHORTFORM.equals("DEALER") || SHORTFORM.equals("SE")) {
+        if (SHORTFORM.equals("DEALER")){
+            globalShare.setDeliverymenuselectpos("1");
+            Intent intent = new Intent(getApplicationContext(), DealerScreenActivity.class);
+            startActivity(intent);
+        } if(SHORTFORM.equals("SE")) {
             globalShare.setDeliverymenuselectpos("1");
             Intent intent = new Intent(getApplicationContext(), DealerMenuScreenActivity.class);
             startActivity(intent);

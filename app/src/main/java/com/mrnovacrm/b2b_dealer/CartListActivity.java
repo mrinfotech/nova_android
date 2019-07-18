@@ -172,6 +172,9 @@ public class CartListActivity extends AppCompatActivity implements View.OnClickL
                 if (DealerMenuScreenActivity.mainfinish != null) {
                     DealerMenuScreenActivity.mainfinish.finish();
                 }
+                if (DealerScreenActivity.mainfinish != null) {
+                    DealerScreenActivity.mainfinish.finish();
+                }
                 Intent intent = new Intent(getApplicationContext(), DealerMenuScreenActivity.class);
                 startActivity(intent);
                 //  }
@@ -1000,6 +1003,7 @@ public class CartListActivity extends AppCompatActivity implements View.OnClickL
                             String qty = hashmapList.get(position).get("product_count");
                             String bal_qty = hashmapList.get(position).get("bal_qty");
                             DealerMenuScreenActivity.updateCartCountNotification(qty);
+                            DealerScreenActivity.updateCartCountNotification(qty);
                             hideKeyboard();
                             String count = holder.qtyedittext.getText().toString().trim();
                             if (!count.equals("")) {
@@ -1217,6 +1221,7 @@ public class CartListActivity extends AppCompatActivity implements View.OnClickL
                             qtyHashmap=new HashMap<>();
                             String itemscount = mProductObject.getItems_count();
                             DealerMenuScreenActivity.updateCartCountNotification(itemscount);
+                            DealerScreenActivity.updateCartCountNotification(itemscount);
                             ProductListActivity.updateCartCountNotification(itemscount);
                             //  BarCodeDetailsActivity.updateCartCountNotification(itemscount);
                             ProductListActivityNew.updateCartCountNotification(itemscount);
@@ -1275,6 +1280,7 @@ public class CartListActivity extends AppCompatActivity implements View.OnClickL
                             }
                             String itemscount = mProductObject.getItems_count();
                             DealerMenuScreenActivity.updateCartCountNotification(itemscount);
+                            DealerScreenActivity.updateCartCountNotification(itemscount);
                             ProductListActivity.updateCartCountNotification(itemscount);
                             // BarCodeDetailsActivity.updateCartCountNotification(itemscount);
                             ProductListActivityNew.updateCartCountNotification(itemscount);

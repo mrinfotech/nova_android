@@ -131,6 +131,10 @@ public class CheckoutInvoiceReportActivity extends AppCompatActivity{
                 {
                     DealerMenuScreenActivity.mainfinish.finish();
                 }
+                if(DealerScreenActivity.mainfinish!=null)
+                {
+                    DealerScreenActivity.mainfinish.finish();
+                }
                 if(ProductCategoriesActivity.mainfinish!=null)
                 {
                     ProductCategoriesActivity.mainfinish.finish();

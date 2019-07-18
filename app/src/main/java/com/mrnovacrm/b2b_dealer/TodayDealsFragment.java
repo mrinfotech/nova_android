@@ -649,6 +649,7 @@ public class TodayDealsFragment extends Fragment {
                             String itemscount = mProductObject.getItems_count();
                             getProductsList();
                             DealerMenuScreenActivity.updateCartCountNotification(itemscount);
+                            DealerScreenActivity.updateCartCountNotification(itemscount);
                             ProductListActivity.updateCartCountNotification(itemscount);
                         }
                     } catch (Exception e) {
